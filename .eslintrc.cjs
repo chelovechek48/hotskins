@@ -15,6 +15,7 @@ module.exports = {
     'no-unused-vars': 'error',
     'linebreak-style': 'off',
     'import/extensions': 'off',
+    'vue/max-attributes-per-line': 'off',
   },
   plugins: ['import'],
   settings: {
