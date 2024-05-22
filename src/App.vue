@@ -1,11 +1,12 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <template>
-  <HelloWorld message-text="new-project" />
+  <div>
+    <router-view />
+  </div>
 </template>
 
-<style scoped>
-
+<style lang="scss">
+@forward '@styles';
 </style>
