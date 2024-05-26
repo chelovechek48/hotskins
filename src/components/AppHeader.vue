@@ -175,7 +175,7 @@ const menuLinks = [
         }
       }
       @media (max-width: $tablet-portrait) {
-        margin-right: calc(0px - $wrapper-padding);
+        margin-right: calc(0px - $container-padding);
       }
     }
 
