@@ -229,7 +229,7 @@ const menuLinks = [
       text-overflow: ellipsis;
       &::before {
         content: 'Привет,';
-        color: #909195;
+        color: colors.$gray;
         font-weight: 400;
         display: block;
       }
@@ -298,7 +298,7 @@ const menuLinks = [
         width: 100%;
         height: $burger-item-height;
         border-radius: 2rem;
-        background-color: #909195;
+        background-color: colors.$gray;
         transition: all 200ms ease;
       }
       &::before, &::after {
