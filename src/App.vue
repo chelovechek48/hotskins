@@ -17,7 +17,7 @@ import AppFooter from '@components/AppFooter.vue';
 @use '@vars/breakpoints' as *;
 
 body {
-  // background-color: colors.$blue-gray;
+  background-color: colors.$blue-gray-dark;
 }
 .page {
   min-height: 100dvh;

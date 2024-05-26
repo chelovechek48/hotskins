@@ -31,9 +31,10 @@ const footerLinks = [
 @use '@vars/colors';
 
 .footer {
-  z-index: 100;
+  z-index: 99;
   color: colors.$gray;
   background-color: colors.$blue-gray-dark;
+  border-top: 2px solid colors.$blue-gray-medium;
 
   &__container {
     padding-block: clamp(0.75rem, 2vw, 1rem);

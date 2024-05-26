@@ -98,6 +98,7 @@ const menuLinks = [
   z-index: 100;
   color: colors.$white;
   background-color: colors.$blue-gray-dark;
+  border-bottom: 2px solid colors.$blue-gray-medium;
 
   &__container {
     background-color: inherit;
