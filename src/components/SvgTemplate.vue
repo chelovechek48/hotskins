@@ -31,4 +31,9 @@ defineProps({
 svg {
   height: 100%;
 }
+
+:root svg {
+  --white: #{$white};
+  --gray: #{$gray};
+}
 </style>
