@@ -1,11 +1,13 @@
 <script setup>
 import AppHeader from '@components/AppHeader.vue';
+import AppFooter from '@components/AppFooter.vue';
 </script>
 
 <template>
   <div class="page">
     <AppHeader />
-    <router-view class="page-container" />
+    <router-view class="page-main page-container" />
+    <AppFooter />
   </div>
 </template>
 
@@ -21,6 +23,9 @@ body {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+}
+.page-main {
+  flex: 1 1 auto;
 }
 .page-container {
   width: 100%;
