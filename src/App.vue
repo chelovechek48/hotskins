@@ -1,10 +1,10 @@
 <script setup>
-import NavigationPanel from '@components/NavigationPanel.vue';
+import AppHeader from '@components/AppHeader.vue';
 </script>
 
 <template>
   <div class="page">
-    <NavigationPanel />
+    <AppHeader />
     <router-view class="page-container" />
   </div>
 </template>
