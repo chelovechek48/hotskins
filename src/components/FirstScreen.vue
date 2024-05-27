@@ -29,9 +29,6 @@
 @use '@vars/colors';
 
 .firstscreen {
-  padding-block: 1rem;
-
-  background-color: colors.$indigo;
   background-image: image-set(
     url("@images/firstscreen-background@1x.avif") type("image/avif") 1x,
     url("@images/firstscreen-background@2x.avif") type("image/avif") 2x,
