@@ -6,7 +6,7 @@
     <div class="page-container">
       <div class="firstscreen__text">
         <h1 class="firstscreen__title">
-          Продавайте и обменивайте игровые предметы
+          Продавайте и обменивайте скины
           <span class="firstscreen__title-games">
             CS:GO
           </span>
@@ -30,8 +30,12 @@
 .firstscreen {
   padding-block: 1rem;
 
-  background-color: #1d2027;
-  background-image: url('@images/firstscreen-background.jpg');
+  background-color: colors.$indigo;
+  background-image: image-set(
+    url("@images/firstscreen-background@1x.avif") type("image/avif") 1x,
+    url("@images/firstscreen-background@2x.avif") type("image/avif") 2x,
+    url("@images/firstscreen-background.jpg") type("image/jpeg") 1x,
+  );
   background-repeat: no-repeat;
   background-position: right bottom;
 
@@ -61,10 +65,11 @@
 
   &__title {
     color: #fff;
-    font-weight: 600;
     font-size: clamp(2rem, 5vw, 4rem);
-    max-width: clamp(40rem, 50vw, 60rem);
+    font-weight: 600;
+    line-height: 1.3;
 
+    max-width: clamp(40rem, 51vw, 50rem);
     &-games {
       white-space: nowrap;
     }
