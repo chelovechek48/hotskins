@@ -76,7 +76,7 @@
   }
 
   &__button {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: 1.5rem;
     font-weight: 500;
 
     color: colors.$blue-gray-dark;
