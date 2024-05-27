@@ -1,4 +1,16 @@
 <script setup>
+const steamWebApiKey = '27A360E268FA58575C23AF676A234B6B';
+const steamId = 'road-to-10th-november';
+
+fetch(`https://api.steampowered.com/IInventoryService/GetInventory/v1/?key=${steamWebApiKey}&steamid=${steamId}&appid=570&count=100`)
+  .then((response) => response.json())
+  .then((data) => {
+    const inventory = data.result.items;
+    console.log(inventory);
+  })
+  .catch((error) => {
+    console.error('Ошибка при получении данных инвентаря:', error);
+  });
 </script>
 
 <template>
