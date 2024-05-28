@@ -5,7 +5,7 @@ const store = createStore({
     return {
       images: import.meta.glob('@images/*.*', { eager: true }),
       user: {
-        authorized: true,
+        authorized: JSON.parse(localStorage.getItem('authorized')) || false,
         login: 'login',
         password: 'admin',
         nickname: 'MegaNagibator',

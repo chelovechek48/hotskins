@@ -11,6 +11,11 @@ const menuLinks = [
   { label: 'помощь', route: 'help' },
   { label: 'контакты', route: 'contacts' },
 ];
+
+const logout = () => {
+  user.authorized = false;
+  localStorage.setItem('authorized', false);
+};
 </script>
 
 <template>
@@ -63,6 +68,7 @@ const menuLinks = [
           <router-link
             class="header__button header__dropdown-link"
             :to="{ name: 'login' }"
+            @click="logout"
           >
             Сменить аккаунт
           </router-link>

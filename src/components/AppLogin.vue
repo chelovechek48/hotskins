@@ -15,13 +15,16 @@ const userdata = ref({
   password: null,
 });
 
-const validateInputData = () => {
+const validateInputData = (e) => {
+  e.preventDefault();
+
   const { login, password } = userdata.value;
   const isValidUserdata = (login === user.login) && (password === user.password);
 
   if (isValidUserdata) {
     router.push({ name: 'home' });
     user.authorized = true;
+    localStorage.setItem('authorized', true);
   } else {
     hasLoginError.value = false;
     setTimeout(() => {
@@ -33,7 +36,7 @@ const validateInputData = () => {
 
 <template>
   <main class="login">
-    <div class="login__container page-container">
+    <form class="login__container page-container">
       <div class="login__logo">
         <SvgTemplate
           class="login__logo-icon"
@@ -74,7 +77,7 @@ const validateInputData = () => {
       <button class="login__button" @click="validateInputData">
         Войти
       </button>
-    </div>
+    </form>
   </main>
 </template>
 
