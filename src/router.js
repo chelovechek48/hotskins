@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import FirstScreen from '@views/FirstScreenView.vue';
+import Home from '@views/HomeView.vue';
 import Login from '@views/LoginView.vue';
 import Trade from '@views/TradeView.vue';
 
@@ -8,7 +8,7 @@ const routes = [
   {
     name: 'home',
     path: `/${root}`,
-    component: FirstScreen,
+    component: Home,
   },
   {
     name: 'login',
