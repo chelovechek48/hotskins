@@ -18,7 +18,7 @@ const menuLinks = [
     <div class="header__container page-container">
       <router-link
         class="header__logo"
-        to="home"
+        :to="{ name: 'home' }"
       >
         <SvgTemplate
           class="header__logo-icon"
@@ -39,7 +39,7 @@ const menuLinks = [
         </ul>
       </nav>
       <details
-        v-if="user"
+        v-if="user.authorized"
         class="header__dropdown-wrapper"
       >
         <summary class="header__dropdown">
@@ -60,9 +60,12 @@ const menuLinks = [
           </div>
         </summary>
         <aside class="header__dropdown-details">
-          <button class="header__button header__dropdown-link">
+          <router-link
+            class="header__button header__dropdown-link"
+            :to="{ name: 'login' }"
+          >
             Сменить аккаунт
-          </button>
+          </router-link>
           <ul class="header__dropdown-list">
             <li v-for="link in menuLinks" :key="link.route">
               <router-link
@@ -78,7 +81,7 @@ const menuLinks = [
       <router-link
         v-else
         class="header__button"
-        to="login"
+        :to="{ name: 'login' }"
       >
         Войти
       </router-link>

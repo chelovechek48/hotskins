@@ -16,7 +16,7 @@
             DOTA 2
           </span>
         </h1>
-        <router-link class="firstscreen__button" to="login">
+        <router-link class="firstscreen__button" :to="{ name: 'login' }">
           Приступить
         </router-link>
       </div>
