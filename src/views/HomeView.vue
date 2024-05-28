@@ -1,6 +1,6 @@
 <script setup>
 import FirstScreen from '@components/FirstScreen.vue';
-import Trade from '@views/TradeView.vue';
+import AppTrade from '@components/AppTrade.vue';
 import { useStore } from 'vuex';
 
 const { authorized } = useStore().state.user;
@@ -8,10 +8,6 @@ const { authorized } = useStore().state.user;
 </script>
 
 <template>
-  <Trade v-if="authorized" />
+  <AppTrade v-if="authorized" />
   <FirstScreen v-else />
 </template>
-
-<style lang="scss" scoped>
-
-</style>

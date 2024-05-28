@@ -1,13 +1,7 @@
 <script setup>
-
+import AppTrade from '@components/AppTrade.vue';
 </script>
 
 <template>
-  <main>
-    TRADEVIEW
-  </main>
+  <AppTrade />
 </template>
-
-<style lang="scss" scoped>
-
-</style>
