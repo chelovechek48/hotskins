@@ -177,7 +177,7 @@ const validateInputData = (e) => {
   }
 
   &__error {
-    color: #ef3a3a;
+    color: colors.$red;
     font-size: clamp(1.25rem, 3vw, 1.5rem);
     font-weight: 500;
     text-align: center;
