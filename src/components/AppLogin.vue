@@ -71,7 +71,18 @@ const validateInputData = (e) => {
             class="login__password-input"
             v-model="passwordIsVisible"
           >
-          <label class="login__password-label" for="toggle-password" />
+          <label class="login__password-label" for="toggle-password">
+            <SvgTemplate
+              class="login__password-icon_open"
+              icon-id="eye-open"
+              view-box="0 0 22 15"
+            />
+            <SvgTemplate
+              class="login__password-icon_close"
+              icon-id="eye-close"
+              view-box="0 0 22 19"
+            />
+          </label>
         </div>
       </div>
       <button class="login__button" @click="validateInputData">
@@ -155,10 +166,14 @@ const validateInputData = (e) => {
 
     &-label {
       z-index: 1;
-      cursor: pointer;
-      width: 2.25rem;
-      height: 2.25rem;
+      display: flex;
+      width: 3rem;
+      height: 3rem;
       border-radius: 50%;
+      cursor: pointer;
+      background-color: colors.$indigo;
+      padding: 0.5rem;
+      margin: -0.5rem;
     }
 
     &-input {
@@ -168,11 +183,12 @@ const validateInputData = (e) => {
     &-input:focus-visible + &-label {
       outline: auto;
     }
-    &-input:not(:checked) + &-label {
-      background-image: url('@icons/sprite.svg#eye-close');
+
+    &-input:not(:checked) + &-label &-icon_open {
+      display: none;
     }
-    &-input:checked + &-label {
-      background-image: url('@icons/sprite.svg#eye-open');
+    &-input:checked + &-label &-icon_close {
+      display: none;
     }
   }
 
