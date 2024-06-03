@@ -47,7 +47,12 @@ const selectedRarity = ref(props.properties.rarity);
             <label class="filter__game-label" :for="`filter-game-${game.id}`">
               <SvgTemplate
                 class="filter__game-icon"
-                icon-id="cs-go"
+                :icon-id="game.id"
+                :sprite="spritePath"
+              />
+              <SvgTemplate
+                class="filter__game-icon"
+                icon-id="test"
                 :sprite="spritePath"
               />
             </label>
