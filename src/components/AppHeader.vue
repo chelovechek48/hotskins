@@ -190,15 +190,18 @@ const logout = () => {
     }
 
     &-details {
-      width: 100%;
+      $border-width: 4px;
+
+      width: calc(100% + $border-width * 2);
       max-height: calc(100dvh - $header-height);
       overflow-y: auto;
 
       z-index: -1;
       position: absolute;
-      top: 100%; right: 0;
+      top: calc(100% - $border-width); right: -$border-width;
       padding-block: 0.5rem 1rem;
       padding-inline: 1rem;
+      border: $border-width solid colors.$blue-gray-dark;
 
       @media (min-width: calc($tablet-portrait + 1px)) {
         border-radius: 0 0 2rem 2rem;
