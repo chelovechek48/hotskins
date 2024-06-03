@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "rarity": "common"
+  },
+  {
+    "id": 2,
+    "rarity": "uncommon"
+  },
+  {
+    "id": 3,
+    "rarity": "immortal"
+  }
+]
