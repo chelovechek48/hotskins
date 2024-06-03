@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
-import spritePath from '@icons/sprite-games.svg';
+import spritePath from '@icons/sprite-category.svg';
 import SvgTemplate from '@components/SvgTemplate.vue';
 
 const emit = defineEmits(['changeFilter']);
@@ -47,7 +47,7 @@ const selectedRarity = ref(props.properties.rarity);
             <label class="filter__game-label" :for="`filter-game-${game.id}`">
               <SvgTemplate
                 class="filter__game-icon"
-                :icon-id="game.id"
+                icon-id="swedish-walls"
                 view-box="0 0 1 1"
                 :sprite="spritePath"
               />
