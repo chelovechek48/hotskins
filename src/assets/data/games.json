@@ -1,0 +1,27 @@
+[
+  {
+    "id": "cs-go",
+    "label": "cs:go",
+    "rarity": [
+      "consumer-grade",
+      "mil-spec-grade",
+      "industrial-grade",
+      "restricted",
+      "classified",
+      "covert"
+    ]
+  },
+  {
+    "id": "dota-2",
+    "label": "dota 2",
+    "rarity": [
+      "common",
+      "uncommon",
+      "rare",
+      "mythical",
+      "immortal",
+      "legendary",
+      "arcana"
+    ]
+  }
+]
