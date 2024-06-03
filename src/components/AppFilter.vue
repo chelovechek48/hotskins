@@ -65,6 +65,7 @@ const selectedRarity = ref(props.properties.rarity);
             v-for="rarity in rarityList" :key="rarity"
             class="filter__checkbox"
             :title="rarity"
+            :style="`color: var(--color-${rarity})`"
           >
             <input
               class="filter__checkbox-input"
@@ -76,9 +77,12 @@ const selectedRarity = ref(props.properties.rarity);
             <label
               class="filter__checkbox-label"
               :for="`filter-rarity-${rarity}`"
-              :style="`color: var(--color-${rarity})`"
-              :data-title="rarity"
-            />
+            >
+              <span class="filter__checkbox-icon" />
+              <span class="filter__checkbox-text">
+                {{ rarity }}
+              </span>
+            </label>
           </div>
         </section>
       </details>
@@ -170,17 +174,70 @@ const selectedRarity = ref(props.properties.rarity);
     position: relative;
 
     &-item {
-      z-index: -1;
+      overflow: hidden;
       background-color: colors.$indigo;
       border-radius: 0 0 0.75rem 0.75rem;
       border: 2px solid colors.$gray;
       margin-top: -0.75rem;
-      padding: 0.75rem;
-      padding-top: 1.5rem;
+      padding-top: 1rem;
+      padding-bottom: 0.5rem;
+    }
+  }
 
+  &__checkbox {
+    position: relative;
+    width: 100%;
+    height: 2.5rem;
+
+    display: flex;
+    align-items: center;
+
+    &:nth-child(even) &-label {
+      background-color: colors.$blue-gray-dark;
+    }
+
+    $border-width: 4px;
+    &-input {
+      z-index: 2;
+      outline: none;
+      width: calc(1.75rem - $border-width * 2);
+      height: calc(1.75rem - $border-width * 2);
+      position: absolute;
+      left: calc($border-width + 0.75rem);
+      &:not(:checked) {
+        opacity: 0;
+      }
+    }
+
+    &-label {
+      width: 100%;
+      height: 100%;
       display: flex;
-      gap: 0.75rem;
-      flex-direction: column;
+      align-items: center;
+      padding-inline: 0.75rem;
+    }
+
+    &-icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      border: $border-width solid currentColor;
+      border-radius: 25%;
+    }
+    &-text {
+      font-size: 1.125rem;
+      padding-left: 0.75rem;
+      text-transform: capitalize;
+    }
+
+    &-input:checked + &-icon {
+      background-color: currentColor;
+    }
+    &-input:focus-visible + &-label {
+      outline: auto;
+    }
+
+    &-input, &-label {
+      cursor: pointer;
     }
   }
 
@@ -250,53 +307,6 @@ const selectedRarity = ref(props.properties.rarity);
 
     &-icon {
       height: 2rem;
-    }
-  }
-
-  &__checkbox {
-    display: flex;
-    width: 100%;
-    height: 1.75rem;
-    position: relative;
-
-    $border-width: 4px;
-    &-input {
-      z-index: 2;
-      outline: none;
-      width: calc(1.75rem - $border-width * 2);
-      height: calc(1.75rem - $border-width * 2);
-      position: absolute;
-      inset: $border-width;
-      &:not(:checked) {
-        opacity: 0;
-      }
-    }
-
-    &-label {
-      width: 1.75rem;
-      height: 100%;
-      border: $border-width solid currentColor;
-      border-radius: 25%;
-
-      display: flex;
-      align-items: center;
-      &::after {
-        padding-left: 2rem;
-        content: attr(data-title);
-        white-space: nowrap;
-        text-transform: capitalize;
-        font-size: 1.125rem;
-      }
-    }
-    &-input:checked + &-label {
-      background-color: currentColor;
-    }
-    &-input:focus-visible + &-label {
-      outline: auto;
-    }
-
-    &-input, &-label {
-      cursor: pointer;
     }
   }
 }
