@@ -149,10 +149,6 @@ const selectedRarity = ref(props.properties.rarity);
     cursor: pointer;
     min-width: min(15rem, 100%);
 
-    &::-webkit-details-marker {
-      display: none;
-    }
-
     &-summary {
       color: #fff;
       font-size: 1.5rem;
@@ -169,6 +165,9 @@ const selectedRarity = ref(props.properties.rarity);
       align-items: center;
       justify-content: space-between;
 
+      &::-webkit-details-marker {
+        display: none;
+      }
     }
 
     &-marker {
