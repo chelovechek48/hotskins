@@ -55,60 +55,48 @@ const selectedRarity = ref(props.properties.rarity);
         </ul>
       </section>
 
-      <details class="filter__rarity-wrapper">
-        <summary class="filter__rarity">
+      <details class="filter__item filter__rarity">
+        <summary class="filter__rarity-summary">
           Редкость
-        </summary>
-        <section class="filter__rarity-item">
-          <div
-            v-for="rarity in rarityList" :key="rarity"
-            class="filter__checkbox"
-            :title="rarity"
-            :style="`color: var(--color-${rarity})`"
-          >
-            <input
-              class="filter__checkbox-input"
-              type="checkbox" name="редкость" :id="`filter-rarity-${rarity}`"
-              :value="rarity"
-              v-model="selectedRarity"
-              @change="emit('changeFilter', { rarity: selectedRarity })"
-            >
-            <label
-              class="filter__checkbox-label"
-              :for="`filter-rarity-${rarity}`"
-            >
-              <span class="filter__checkbox-icon" />
-              <span class="filter__checkbox-text">
-                {{ rarity }}
-              </span>
-            </label>
-          </div>
-        </section>
-      </details>
-
-      <!-- <section class="filter__item">
-        <header class="filter__title">
-          Редкость
-        </header>
-        <div
-          v-for="rarity in rarityList" :key="rarity"
-          class="filter__checkbox"
-          :title="rarity"
-        >
-          <input
-            class="filter__checkbox-input"
-            type="checkbox" name="редкость" :id="`filter-rarity-${rarity}`"
-            :value="rarity"
-            v-model="selectedRarity"
-            @change="emit('changeFilter', { rarity: selectedRarity })"
-          >
-          <label
-            class="filter__checkbox-label"
-            :for="`filter-rarity-${rarity}`"
-            :style="`color: var(--color-${rarity})`"
+          <SvgTemplate
+            class="filter__rarity-marker"
+            icon-id="dropdown-arrow"
+            view-box="0 0 12 7"
           />
+        </summary>
+        <div class="filter__rarity-wrapper">
+          <ul class="filter__rarity-list">
+            <li
+              v-for="rarity in rarityList" :key="rarity"
+              class="filter__rarity-item"
+              :title="rarity"
+              :style="`color: var(--color-${rarity})`"
+            >
+              <input
+                class="filter__rarity-input"
+                type="checkbox" name="редкость" :id="`filter-rarity-${rarity}`"
+                :value="rarity"
+                v-model="selectedRarity"
+                @change="emit('changeFilter', { rarity: selectedRarity })"
+              >
+              <label
+                class="filter__rarity-label"
+                :for="`filter-rarity-${rarity}`"
+              >
+                <div class="filter__rarity-icon-wrapper">
+                  <SvgTemplate
+                    class="filter__rarity-icon"
+                    icon-id="check"
+                  />
+                </div>
+                <span class="filter__rarity-text">
+                  {{ rarity }}
+                </span>
+              </label>
+            </li>
+          </ul>
         </div>
-      </section> -->
+      </details>
 
       <input
         type="search" name="поиск" id="filter-search"
@@ -133,7 +121,8 @@ const selectedRarity = ref(props.properties.rarity);
   &__container {
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 2.5vw, 1.5rem);
+    justify-content: space-between;
+    gap: clamp(0.75rem, 2.5vw, 1.5rem);
     flex-wrap: wrap
   }
   &__item {
@@ -142,7 +131,7 @@ const selectedRarity = ref(props.properties.rarity);
     gap: 0.75rem;
 
     @media (max-width: $mobile) {
-      width: 100%;
+      flex: 0 0 100%;
     }
   }
 
@@ -156,60 +145,98 @@ const selectedRarity = ref(props.properties.rarity);
   }
 
   &__rarity {
-    &-wrapper {
-      width: 100%;
+    position: relative;
+    cursor: pointer;
+    min-width: min(15rem, 100%);
+
+    &::-webkit-details-marker {
+      display: none;
     }
 
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 400;
+    &-summary {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 400;
 
-    display: block;
-    background-color: colors.$indigo;
-    border-radius: 0.75rem;
-    border: 2px solid colors.$gray;
-    padding: 0.5rem 1rem;
-    z-index: 1;
-    position: relative;
-
-    &-item {
-      overflow: hidden;
+      z-index: 1;
+      position: relative;
       background-color: colors.$indigo;
+      border-radius: 0.75rem;
+      border: 2px solid colors.$gray;
+      padding: 0.5rem 1rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+    }
+
+    &-marker {
+      transition: scale 200ms ease;
+      height: 0.6rem;
+    }
+    &[open] &-marker {
+      scale: 1 -1;
+    }
+
+    &-wrapper {
+      @media (min-width: calc($mobile + 1px)) {
+        position: absolute;
+        width: 100%;
+      }
+      overflow: hidden;
+      margin-top: -0.75rem;
+
+      display: grid;
+      grid-template-rows: 0;
+    }
+    &[open] &-wrapper {
+      grid-template-rows: 1fr;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      @keyframes details-open {
+        from {
+          translate: 0 -100%;
+        }
+        to {
+          translate: 0 0;
+        }
+      }
+      animation: details-open 200ms ease;
+
+      background-color: colors.$blue-gray-dark;
       border-radius: 0 0 0.75rem 0.75rem;
       border: 2px solid colors.$gray;
-      margin-top: -0.75rem;
       padding-top: 1rem;
       padding-bottom: 0.5rem;
     }
-  }
 
-  &__checkbox {
-    position: relative;
-    width: 100%;
-    height: 2.5rem;
+    &-item {
+      position: relative;
+      width: 100%;
+      height: 2.5rem;
 
-    display: flex;
-    align-items: center;
+      display: flex;
+      align-items: center;
 
-    &:nth-child(even) &-label {
-      background-color: colors.$blue-gray-dark;
+      background-color: colors.$indigo;
     }
 
-    $border-width: 4px;
     &-input {
-      z-index: 2;
-      outline: none;
-      width: calc(1.75rem - $border-width * 2);
-      height: calc(1.75rem - $border-width * 2);
+      opacity: 0;
       position: absolute;
-      left: calc($border-width + 0.75rem);
-      &:not(:checked) {
-        opacity: 0;
-      }
+    }
+    &-input:focus-visible + &-label {
+      outline: auto;
     }
 
     &-label {
-      width: 100%;
+      max-width: 100%;
       height: 100%;
       display: flex;
       align-items: center;
@@ -217,22 +244,26 @@ const selectedRarity = ref(props.properties.rarity);
     }
 
     &-icon {
-      width: 1.75rem;
-      height: 1.75rem;
-      border: $border-width solid currentColor;
-      border-radius: 25%;
+      $border-width: 3px;
+      transition: opacity 50ms ease;
+      &-wrapper {
+        width: 1.75rem;
+        height: 1.75rem;
+        border: $border-width solid currentColor;
+        border-radius: 25%;
+      }
     }
+    &-input:not(:checked) + &-label &-icon {
+      opacity: 0;
+    }
+
     &-text {
       font-size: 1.125rem;
       padding-left: 0.75rem;
       text-transform: capitalize;
-    }
-
-    &-input:checked + &-icon {
-      background-color: currentColor;
-    }
-    &-input:focus-visible + &-label {
-      outline: auto;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     &-input, &-label {
@@ -242,16 +273,16 @@ const selectedRarity = ref(props.properties.rarity);
 
   &__search {
     width: 100%;
-    flex: 1 1 20rem;
+    flex: 1 1 14rem;
 
     font-size: 1.5rem;
     color: #fff;
     background-color: colors.$indigo;
     border-radius: 0.75rem;
-    box-shadow: 0 0 0 2px colors.$gray;
+    border: 2px solid colors.$gray;
 
-    height: 3rem;
     padding-inline: 1rem;
+    padding-block: 0.5rem;
     appearance: none;
   }
 
@@ -260,13 +291,12 @@ const selectedRarity = ref(props.properties.rarity);
     $border-width: 2px;
     display: flex;
     gap: $border-width;
-
-    @media (max-width: $mobile) {
-      width: 100%;
-    }
+    border: $border-width solid transparent;
+    width: 100%;
 
     &-item {
       width: 100%;
+      height: calc(3rem - 4px);
     }
     &-item:first-child &-label {
       border-radius: $border-radius 0 0 $border-radius;
@@ -286,14 +316,13 @@ const selectedRarity = ref(props.properties.rarity);
     &-label {
       z-index: 1;
       position: relative;
+      height: 100%;
 
       display: flex;
-      align-items: center;
       justify-content: center;
       box-shadow: 0 0 0 $border-width colors.$gray;
       transition: all 300ms ease;
 
-      gap: 0.5rem;
       padding: 0.5rem;
       cursor: pointer;
     }
@@ -302,10 +331,6 @@ const selectedRarity = ref(props.properties.rarity);
       z-index: 2;
       box-shadow: 0 0 0 $border-width rgba(colors.$gold, 0.75);
       background-color: rgba(colors.$gold, 0.75);
-    }
-
-    &-icon {
-      height: 2rem;
     }
   }
 }
