@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import AppFilter from '@components/AppFilter.vue';
+import SkinsField from '@components/SkinsField.vue';
 
 import gamesList from '@/assets/data/games.json';
 
@@ -41,16 +42,24 @@ const changeFilter = (changedValue) => {
 </script>
 
 <template>
-  <main>
+  <main class="trade">
     <AppFilter
       :games="gamesList"
       :properties="filterProperties"
       @changeFilter="changeFilter($event)"
     />
+    <SkinsField />
   </main>
 </template>
 
 <style lang="scss" scoped>
+
+.trade {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 :root * {
   --color-common: #b0c3d9;
   --color-uncommon: #5e98d9;

@@ -35,5 +35,6 @@ svg {
 :root svg {
   --white: #{$white};
   --gray: #{$gray};
+  --gold: #{$gold};
 }
 </style>
