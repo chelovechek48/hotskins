@@ -12,16 +12,14 @@
     ]
   },
   {
-    "id": "dota-2",
-    "label": "dota 2",
+    "id": "rust",
+    "label": "rust",
     "rarity": [
-      "common",
-      "uncommon",
-      "rare",
-      "mythical",
-      "immortal",
-      "legendary",
-      "arcana"
+      "weapon",
+      "misc",
+      "clothing",
+      "armor",
+      "resource"
     ]
   }
 ]

@@ -3,7 +3,7 @@ import { createStore } from 'vuex';
 const store = createStore({
   state() {
     return {
-      images: import.meta.glob('@images/*.*', { eager: true }),
+      images: import.meta.glob('@images/**/*.*', { eager: true }),
       user: {
         authorized: JSON.parse(localStorage.getItem('authorized')) || false,
         login: 'login',

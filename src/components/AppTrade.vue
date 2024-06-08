@@ -12,8 +12,9 @@ const router = useRouter();
 const filterProperties = {
   game: ref(route.query.game || localStorage.getItem('selected-game') || gamesList[0].id),
   rarity: ref(route.query.rarity ? route.query.rarity.split(',') : []),
-  search: ref(route.query.search || undefined),
+  search: ref(route.query.search || ''),
 };
+
 const updateFilterProperties = () => {
   router.replace({
     query: {
@@ -31,7 +32,7 @@ const changeFilter = (changedValue) => {
   const hasGameChanged = key === 'game';
   if (hasGameChanged) {
     filterProperties.rarity.value = [];
-    filterProperties.search.value = undefined;
+    filterProperties.search.value = '';
 
     localStorage.setItem('selected-game', value);
   }
@@ -39,6 +40,7 @@ const changeFilter = (changedValue) => {
   updateFilterProperties();
 };
 
+const selectedSkins = ref([]);
 </script>
 
 <template>
@@ -48,7 +50,11 @@ const changeFilter = (changedValue) => {
       :properties="filterProperties"
       @changeFilter="changeFilter($event)"
     />
-    <SkinsField />
+    <SkinsField
+      :games-id="gamesList.map((game) => game.id)"
+      :properties="filterProperties"
+      @changeSkins="selectedSkins.value = $event"
+    />
   </main>
 </template>
 
@@ -61,13 +67,11 @@ const changeFilter = (changedValue) => {
 }
 
 :root * {
-  --color-common: #b0c3d9;
-  --color-uncommon: #5e98d9;
-  --color-rare: #4b69ff;
-  --color-mythical: #8847ff;
-  --color-immortal: #e4ae39;
-  --color-legendary: #d32ce6;
-  --color-arcana: #ade55c;
+  --color-weapon: #f15840;
+  --color-misc: #35a3f1;
+  --color-clothing: #a7ec2e;
+  --color-armor: #a7ec2e;
+  --color-resource: #ffffff;
 
   --color-consumer-grade: #b0c3d9;
   --color-mil-spec-grade: #4b69ff;

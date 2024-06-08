@@ -1,44 +1,137 @@
 [
   {
-    "id": 1,
-    "rarity": "covert",
-    "price": "10,000",
-    "trade-ban": "5 д. 3 ч."
+    "game": "cs-go",
+    "slot": "AWP",
+    "pattern": {
+      "ru": "БАХ",
+      "en": "BOOM"
+    },
+    "rarity": "classified",
+    "price": "12000",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs-go/AWP_BOOM.png"
+      }
+    }
   },
   {
-    "id": 2,
-    "title": "Knife",
+    "game": "cs-go",
+    "slot": "AK-47",
+    "pattern": {
+      "ru": "Вулкан",
+      "en": "Vulcan"
+    },
     "rarity": "covert",
-    "price": "10,000"
+    "price": "9000",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs-go/AK-47_Vulcan.png"
+      }
+    }
   },
   {
-    "id": 3,
-    "rarity": "covert",
-    "price": "10,000"
+    "game": "cs-go",
+    "slot": "Nova",
+    "pattern": {
+      "ru": "Пыльник",
+      "en": "Rust Coat"
+    },
+    "rarity": "industrial-grade",
+    "price": "500",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs-go/Nova_Rust-Coat.png"
+      }
+    }
   },
   {
-    "id": 4,
+    "game": "cs-go",
+    "slot": {
+      "ru": "Нож-бабочка",
+      "en": "Butterfly Knife"
+    },
+    "pattern": {
+      "ru": "Ручная роспись",
+      "en": "Freehand"
+    },
     "rarity": "covert",
-    "price": "10,000"
+    "price": "150000",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs-go/Butterfly-Knife_Freehand.png"
+      }
+    },
+    "trade-ban": "June 10, 2024 15:46:57"
+  },
+  
+  {
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Wood"
+    },
+    "rarity": "resource",
+    "price": "20.3",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Resource_Wood.png"
+      }
+    }
   },
   {
-    "id": 5,
-    "rarity": "covert",
-    "price": "10,000"
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Metal"
+    },
+    "rarity": "resource",
+    "price": "75.99",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Resource_Metal.png"
+      }
+    }
   },
   {
-    "id": 6,
-    "rarity": "covert",
-    "price": "10,000"
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Cloth"
+    },
+    "rarity": "resource",
+    "price": "8.68",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Resource_Cloth.png"
+      }
+    }
   },
   {
-    "id": 1,
-    "rarity": "covert",
-    "price": "10,000"
+    "game": "rust",
+    "slot": "Assault Rifle",
+    "pattern": {
+      "en": "Rustpunk AK47"
+    },
+    "rarity": "weapon",
+    "price": "236.58",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Weapon_Rustpunk-AK47.png"
+      }
+    }
   },
   {
-    "id": 1,
-    "rarity": "covert",
-    "price": "10,000"
+    "game": "rust",
+    "slot": "Chair",
+    "pattern": {
+      "en": "Red Leather"
+    },
+    "rarity": "misc",
+    "price": "668.78",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Chair_Red-Leather-Chair.png"
+      }
+    }
   }
 ]

@@ -26,87 +26,85 @@ const selectedRarity = ref(props.properties.rarity);
 </script>
 
 <template>
-  <aside class="filter">
-    <div class="filter__container page-container">
-      <section class="filter__item">
-        <header class="filter__title">
-          Игра
-        </header>
-        <ul class="filter__game">
+  <div class="filter filter__container page-container">
+    <section class="filter__item">
+      <header class="filter__title">
+        Игра
+      </header>
+      <ul class="filter__game">
+        <li
+          v-for="game in games" :key="game.id"
+          class="filter__game-item"
+          :title="game.label"
+        >
+          <input
+            type="radio" name="игра" :id="`filter-game-${game.id}`"
+            class="filter__game-input"
+            :checked="properties.game.value === game.id"
+            @change="emit('changeFilter', { game: game.id })"
+          >
+          <label class="filter__game-label" :for="`filter-game-${game.id}`">
+            <SvgTemplate
+              class="filter__game-icon"
+              :icon-id="game.id"
+              :sprite="spritePath"
+            />
+          </label>
+        </li>
+      </ul>
+    </section>
+
+    <details class="filter__item filter__rarity">
+      <summary class="filter__rarity-summary">
+        Редкость
+        <SvgTemplate
+          class="filter__rarity-marker"
+          icon-id="dropdown-arrow"
+          view-box="0 0 12 7"
+        />
+      </summary>
+      <div class="filter__rarity-wrapper">
+        <ul class="filter__rarity-list">
           <li
-            v-for="game in games" :key="game.id"
-            class="filter__game-item"
-            :title="game.label"
+            v-for="rarity in rarityList" :key="rarity"
+            class="filter__rarity-item"
+            :title="rarity"
+            :style="`color: var(--color-${rarity})`"
           >
             <input
-              type="radio" name="игра" :id="`filter-game-${game.id}`"
-              class="filter__game-input"
-              :checked="properties.game.value === game.id"
-              @change="emit('changeFilter', { game: game.id })"
+              class="filter__rarity-input"
+              type="checkbox" name="редкость" :id="`filter-rarity-${rarity}`"
+              :value="rarity"
+              v-model="selectedRarity"
+              @change="emit('changeFilter', { rarity: selectedRarity })"
             >
-            <label class="filter__game-label" :for="`filter-game-${game.id}`">
-              <SvgTemplate
-                class="filter__game-icon"
-                :icon-id="game.id"
-                :sprite="spritePath"
-              />
+            <label
+              class="filter__rarity-label"
+              :for="`filter-rarity-${rarity}`"
+            >
+              <div class="filter__rarity-icon-wrapper">
+                <SvgTemplate
+                  class="filter__rarity-icon"
+                  icon-id="check"
+                />
+              </div>
+              <span class="filter__rarity-text">
+                {{ rarity }}
+              </span>
             </label>
           </li>
         </ul>
-      </section>
+      </div>
+    </details>
 
-      <details class="filter__item filter__rarity">
-        <summary class="filter__rarity-summary">
-          Редкость
-          <SvgTemplate
-            class="filter__rarity-marker"
-            icon-id="dropdown-arrow"
-            view-box="0 0 12 7"
-          />
-        </summary>
-        <div class="filter__rarity-wrapper">
-          <ul class="filter__rarity-list">
-            <li
-              v-for="rarity in rarityList" :key="rarity"
-              class="filter__rarity-item"
-              :title="rarity"
-              :style="`color: var(--color-${rarity})`"
-            >
-              <input
-                class="filter__rarity-input"
-                type="checkbox" name="редкость" :id="`filter-rarity-${rarity}`"
-                :value="rarity"
-                v-model="selectedRarity"
-                @change="emit('changeFilter', { rarity: selectedRarity })"
-              >
-              <label
-                class="filter__rarity-label"
-                :for="`filter-rarity-${rarity}`"
-              >
-                <div class="filter__rarity-icon-wrapper">
-                  <SvgTemplate
-                    class="filter__rarity-icon"
-                    icon-id="check"
-                  />
-                </div>
-                <span class="filter__rarity-text">
-                  {{ rarity }}
-                </span>
-              </label>
-            </li>
-          </ul>
-        </div>
-      </details>
-
-      <input
-        type="search" name="поиск" id="filter-search"
-        class="filter__search"
-        placeholder="поиск"
-        :value="properties.search.value"
-        @input="emit('changeFilter', { search: $event.target.value })"
-      >
-    </div>
-  </aside>
+    <input
+      type="search" name="поиск" id="filter-search"
+      class="filter__search"
+      placeholder="поиск"
+      :value="properties.search.value"
+      @input="emit('changeFilter', { search: $event.target.value })"
+    >
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -114,9 +112,7 @@ const selectedRarity = ref(props.properties.rarity);
 @use '@vars/colors';
 
 .filter {
-  background-color: colors.$blue-gray-dark;
-  margin-top: -1rem;
-  padding-block: clamp(0.75rem, 2.5vw, 1rem);
+  z-index: 10;
 
   &__container {
     display: flex;
@@ -235,6 +231,7 @@ const selectedRarity = ref(props.properties.rarity);
     }
 
     &-label {
+      width: 100%;
       max-width: 100%;
       height: 100%;
       display: flex;
