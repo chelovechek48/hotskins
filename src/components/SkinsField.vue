@@ -169,7 +169,9 @@ const changeSkins = (skin) => {
   }
 
   &__top {
+    max-width: 100%;
     width: 100%;
+    aspect-ratio: 4/3;
     position: relative;
   }
 
@@ -240,7 +242,7 @@ const changeSkins = (skin) => {
     z-index: 2;
     position: relative;
     width: 100%;
-    aspect-ratio: 4/3;
+    height: 100%;
     object-fit: contain;
 
     opacity: 1;

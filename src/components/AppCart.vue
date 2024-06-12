@@ -26,12 +26,6 @@ const details = ref(null);
     <details ref="details" class="cart page-container">
       <summary class="cart__container" tabindex="-1">
         <button
-          class="cart__button"
-          @click="emit('resetSelected')"
-        >
-          Сбросить
-        </button>
-        <button
           class="cart__button cart__toggle"
           data-show="Показать"
           data-hide="Скрыть"
@@ -40,8 +34,14 @@ const details = ref(null);
         >
           предметы
         </button>
-        <button class="cart__button cart__price">
+        <button class="cart__button">
           Пополнить счёт на {{ state.toRubFormat(orderPrice) }}
+        </button>
+        <button
+          class="cart__button"
+          @click="emit('resetSelected')"
+        >
+          Сбросить
         </button>
       </summary>
       <slot />
@@ -82,6 +82,7 @@ const details = ref(null);
     display: flex;
     align-items: center;
     gap: 0.25em;
+    margin-right: auto;
     &::after {
       content: attr(data-count);
 
@@ -105,10 +106,6 @@ const details = ref(null);
   }
   &:not([open]) &__toggle::before {
     content: attr(data-show);
-  }
-
-  &__price {
-    margin-left: auto;
   }
 }
 </style>

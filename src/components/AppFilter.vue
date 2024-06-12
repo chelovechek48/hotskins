@@ -146,6 +146,7 @@ const selectedRarity = ref(props.properties.rarity);
     min-width: min(15rem, 100%);
 
     &-summary {
+      height: 3rem;
       color: #fff;
       font-size: 1.5rem;
       font-weight: 400;
@@ -265,6 +266,7 @@ const selectedRarity = ref(props.properties.rarity);
 
   &__search {
     width: 100%;
+    height: 3rem;
     flex: 1 1 14rem;
 
     font-size: 1.5rem;
@@ -288,7 +290,7 @@ const selectedRarity = ref(props.properties.rarity);
 
     &-item {
       width: 100%;
-      height: calc(3rem - 4px);
+      height: calc(3rem - $border-width * 2);
     }
     &-item:first-child &-label {
       border-radius: $border-radius 0 0 $border-radius;
