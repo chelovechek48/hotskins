@@ -160,10 +160,6 @@ const selectedRarity = ref(props.properties.rarity);
       display: flex;
       align-items: center;
       justify-content: space-between;
-
-      &::-webkit-details-marker {
-        display: none;
-      }
     }
 
     &-marker {

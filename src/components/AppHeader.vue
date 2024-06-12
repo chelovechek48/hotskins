@@ -168,10 +168,6 @@ const logout = () => {
     gap: 0 0.75rem;
     cursor: pointer;
 
-    &::-webkit-details-marker {
-      display: none;
-    }
-
     &-wrapper {
       $wrapper-padding: clamp(0.5rem, 2vw, 1rem);
 
