@@ -1,10 +1,12 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import AppFilter from '@components/AppFilter.vue';
 import SkinsField from '@components/SkinsField.vue';
+import AppCart from '@components/AppCart.vue';
 
 import gamesList from '@/assets/data/games.json';
+import skinsList from '@/assets/data/skins.json';
 
 const route = useRoute();
 const router = useRouter();
@@ -40,7 +42,35 @@ const changeFilter = (changedValue) => {
   updateFilterProperties();
 };
 
+const skins = computed(() => skinsList.filter((skin) => {
+  const filterGame = filterProperties.game.value;
+  const filterRarity = filterProperties.rarity.value;
+  const filterSearch = filterProperties.search.value;
+
+  const skinLocalization = Object.entries(skin.pattern).map((pattern) => {
+    const lang = pattern[0];
+    return {
+      slot: skin.slot[lang] || skin.slot,
+      pattern: skin.pattern[lang],
+    };
+  });
+
+  const searchTags = [
+    ...skinLocalization.map((skinName) => `${skinName.slot} ${skinName.pattern}`),
+    ...skinLocalization.map((skinName) => `${skinName.slot} | ${skinName.pattern}`),
+  ];
+
+  const filterKeys = {
+    game: skin.game === filterGame,
+    rarity: !filterRarity.length || filterRarity.includes(skin.rarity),
+    search: searchTags.find((tag) => tag.toLowerCase().includes(filterSearch.toLowerCase())),
+  };
+
+  const hasOnlyTrueKeys = Object.values(filterKeys).every((value) => value);
+  return hasOnlyTrueKeys;
+}));
 const selectedSkins = ref([]);
+
 </script>
 
 <template>
@@ -50,11 +80,24 @@ const selectedSkins = ref([]);
       :properties="filterProperties"
       @changeFilter="changeFilter($event)"
     />
-    <SkinsField
-      :games-id="gamesList.map((game) => game.id)"
-      :properties="filterProperties"
-      @changeSkins="selectedSkins.value = $event"
-    />
+    <div class="page-container">
+      <SkinsField
+        list-style="grid"
+        :skins="skins"
+        :selected="selectedSkins"
+      />
+    </div>
+    <AppCart
+      v-show="selectedSkins.length"
+      :selected-skins="selectedSkins"
+      @resetSelected="selectedSkins.length = 0"
+    >
+      <SkinsField
+        list-style="inline"
+        :skins="selectedSkins"
+        :selected="selectedSkins"
+      />
+    </AppCart>
   </main>
 </template>
 

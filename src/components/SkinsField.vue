@@ -1,17 +1,22 @@
 <script setup>
-import { ref, computed } from 'vue';
-import skinsList from '@/assets/data/skins.json';
+import { ref } from 'vue';
+import { useStore } from 'vuex';
 import SvgTemplate from '@components/SvgTemplate.vue';
 import ImgTemplate from '@components/ImgTemplate.vue';
 
-const emit = defineEmits(['changeSkins']);
+const { state } = useStore();
+
 const props = defineProps({
-  gamesId: {
+  listStyle: {
+    type: String,
+    required: true,
+  },
+  skins: {
     type: Array,
     required: true,
   },
-  properties: {
-    type: Object,
+  selected: {
+    type: Array,
     required: true,
   },
 });
@@ -40,62 +45,33 @@ const getTimer = (futureDateString) => {
   return false;
 };
 
-const skins = computed(() => skinsList.filter((skin) => {
-  const filterGame = props.properties.game.value;
-  const filterRarity = props.properties.rarity.value;
-  const filterSearch = props.properties.search.value;
-
-  const skinLocalization = Object.entries(skin.pattern).map((pattern) => {
-    const lang = pattern[0];
-    return {
-      slot: skin.slot[lang] || skin.slot,
-      pattern: skin.pattern[lang],
-    };
-  });
-
-  const searchTags = [
-    ...skinLocalization.map((skinName) => `${skinName.slot} ${skinName.pattern}`),
-    ...skinLocalization.map((skinName) => `${skinName.slot} | ${skinName.pattern}`),
-  ];
-
-  const filterKeys = {
-    game: skin.game === filterGame,
-    rarity: !filterRarity.length || filterRarity.includes(skin.rarity),
-    search: searchTags.find((tag) => tag.toLowerCase().includes(filterSearch.toLowerCase())),
-  };
-
-  const hasOnlyTrueKeys = Object.values(filterKeys).every((value) => value);
-  return hasOnlyTrueKeys;
-}));
-
-const selectedSkins = ref(
-  props.gamesId.reduce((acc, game) => {
-    acc[game] = [];
-    return acc;
-  }, {}),
-);
+const selectedSkins = ref(props.selected);
+const changeSkins = (skin) => {
+  const skinIndex = selectedSkins.value.indexOf(skin);
+  if (skinIndex !== -1) {
+    selectedSkins.value.splice(skinIndex, 1);
+  } else {
+    selectedSkins.value.push(skin);
+  }
+};
 
 </script>
 
 <template>
-  <ul class="card__list page-container">
-    <li v-for="skin in skins" :key="skin.pattern.en">
+  <ul :class="`card__list card__list_${listStyle}`">
+    <li
+      v-for="skin in skins" :key="listStyle + skin.pattern.en"
+      class="card__list-item"
+    >
       <input
-        type="checkbox" name="скин" :id="skin.pattern.en"
+        type="checkbox" name="скин" :id="listStyle + skin.pattern.en"
         class="card__input"
         :disabled="getTimer(skin['trade-ban'])"
-        :value="skin.pattern.en"
-        v-model="selectedSkins[skin.game]"
-        @change="emit('changeSkins', selectedSkins)"
+        :checked="selectedSkins.includes(skin)"
+        @change="changeSkins(skin)"
       >
-      <!-- <input
-        type="checkbox" name="скин" :id="`${skin.slot.en || skin.slot}-${skin.pattern.en}`"
-        class="card__input"
-        :disabled="getTimer(skin['trade-ban'])"
-        :checked="selectedSkins.includes(`${skin.slot.en || skin.slot}-${skin.pattern.en}`)"
-      > -->
       <label
-        :for="skin.pattern.en"
+        :for="listStyle + skin.pattern.en"
         class="card"
         :style="`color: var(--color-${skin.rarity})`"
       >
@@ -118,14 +94,7 @@ const selectedSkins = ref(
           />
         </div>
         <span class="card__price">
-          {{
-            new Intl.NumberFormat('ru-RU', {
-              style: 'currency',
-              currency: 'RUB',
-              minimumFractionDigits: 0,
-            })
-              .format(skin.price)
-          }}
+          {{ state.toRubFormat(skin.price) }}
         </span>
 
         <div
@@ -142,7 +111,7 @@ const selectedSkins = ref(
           v-else
           class="card__trade-status"
         >
-          Обменять
+          {{ listStyle === 'grid' ? 'Обменять' : 'Удалить' }}
         </span>
       </label>
     </li>
@@ -155,12 +124,28 @@ const selectedSkins = ref(
 .card {
   cursor: pointer;
   transition:
-    background-color 200ms ease,
-    border-color 50ms ease;
+  background-color 200ms ease,
+  border-color 50ms ease;
+
   &__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-    gap: 1rem;
+    &_grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+      gap: 1rem;
+    }
+    &_inline {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-block: clamp(0.75rem, 2vw, 1rem);
+      margin-block: calc(0px - clamp(0.75rem, 2vw, 1rem));
+      padding-inline: 0.75rem;
+      margin-inline: -0.75rem;
+    }
+    &_inline &-item {
+      flex: 0 0 8rem;
+      margin-top: clamp(0.75rem, 2vw, 1rem);
+    }
   }
 
   display: flex;
