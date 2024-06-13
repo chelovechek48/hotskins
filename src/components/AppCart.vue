@@ -1,6 +1,13 @@
+<!-- eslint-disable no-new -->
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useStore } from 'vuex';
+import Accordion from '@js/accordion.js';
+
+const accordion = ref(null);
+onMounted(() => {
+  new Accordion(accordion.value);
+});
 
 const { state } = useStore();
 
@@ -18,21 +25,20 @@ const orderPrice = computed(
 );
 const skinsCount = computed(() => props.selectedSkins.length);
 
-const details = ref(null);
 </script>
 
 <template>
   <aside class="cart__wrapper">
-    <details ref="details" class="cart page-container">
+    <details
+      ref="accordion"
+      class="cart page-container"
+    >
       <summary class="cart__container" tabindex="-1">
         <button
-          class="cart__button cart__toggle"
-          data-show="Показать"
-          data-hide="Скрыть"
+          class="cart__button cart__toggle accordion__button"
           :data-count="skinsCount"
-          @click="details.open = !details.open"
         >
-          предметы
+          Предметы
         </button>
         <button class="cart__button">
           Пополнить счёт на {{ state.toRubFormat(orderPrice) }}
@@ -44,7 +50,9 @@ const details = ref(null);
           Сбросить
         </button>
       </summary>
-      <slot />
+      <aside v-show="skinsCount" class="cart__content accordion__content">
+        <slot />
+      </aside>
     </details>
   </aside>
 </template>
@@ -55,17 +63,24 @@ const details = ref(null);
 
 .cart {
   &__wrapper {
+    z-index: 100;
+    position: sticky;
+    bottom: 0;
+
     background-color: colors.$gold;
     margin-top: auto;
     margin-bottom: -1rem;
-    padding-block: clamp(0.75rem, 2vw, 1rem);
   }
 
   &__container {
+    padding-block: clamp(0.75rem, 2vw, 1rem);
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: clamp(0.75rem, 2vw, 1rem);
+  }
+  &__content {
+    padding-top: clamp(0.75rem, 2vw, 1rem);
   }
 
   &__button {
@@ -79,7 +94,7 @@ const details = ref(null);
   }
 
   &__toggle {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.25em;
     margin-right: auto;
@@ -100,12 +115,6 @@ const details = ref(null);
       border-radius: 50%;
       margin-block: -1em;
     }
-  }
-  &[open] &__toggle::before {
-    content: attr(data-hide);
-  }
-  &:not([open]) &__toggle::before {
-    content: attr(data-show);
   }
 }
 </style>

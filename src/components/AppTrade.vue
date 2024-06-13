@@ -88,7 +88,6 @@ const selectedSkins = ref([]);
       />
     </div>
     <AppCart
-      v-show="selectedSkins.length"
       :selected-skins="selectedSkins"
       @resetSelected="selectedSkins.length = 0"
     >

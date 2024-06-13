@@ -178,12 +178,6 @@ const selectedRarity = ref(props.properties.rarity);
       }
       overflow: hidden;
       margin-top: -0.75rem;
-
-      display: grid;
-      grid-template-rows: 0;
-    }
-    &[open] &-wrapper {
-      grid-template-rows: 1fr;
     }
 
     &-list {

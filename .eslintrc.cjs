@@ -23,6 +23,7 @@ module.exports = {
       alias: {
         map: [
           ['@', './src/'],
+          ['@js', './src/js'],
           ['@components', './src/components'],
           ['@views', './src/views'],
           ['@images', './src/assets/images'],

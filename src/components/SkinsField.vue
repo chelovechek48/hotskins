@@ -137,14 +137,14 @@ const changeSkins = (skin) => {
       display: flex;
       gap: 0.5rem;
       overflow-x: auto;
-      padding-block: clamp(0.75rem, 2vw, 1rem);
-      margin-block: calc(0px - clamp(0.75rem, 2vw, 1rem));
       padding-inline: 0.75rem;
       margin-inline: -0.75rem;
+      padding-block: clamp(0.75rem, 2vw, 1rem);
+      margin-top: calc(0px - clamp(0.75rem, 2vw, 1rem) * 2);
     }
     &_inline &-item {
+      position: relative;
       flex: 0 0 8rem;
-      margin-top: clamp(0.75rem, 2vw, 1rem);
     }
   }
 
