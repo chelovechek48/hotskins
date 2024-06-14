@@ -1,7 +1,14 @@
+<!-- eslint-disable no-new -->
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import spritePath from '@icons/sprite-games.svg';
 import SvgTemplate from '@components/SvgTemplate.vue';
+import Accordion from '@js/accordion.js';
+
+const accordion = ref(null);
+onMounted(() => {
+  new Accordion(accordion.value);
+});
 
 const emit = defineEmits(['changeFilter']);
 const props = defineProps({
@@ -27,11 +34,11 @@ const selectedRarity = ref(props.properties.rarity);
 
 <template>
   <div class="filter filter__container page-container">
-    <section class="filter__item">
+    <section class="filter__game">
       <header class="filter__title">
         Игра
       </header>
-      <ul class="filter__game">
+      <ul class="filter__game-list filter__item">
         <li
           v-for="game in games" :key="game.id"
           class="filter__game-item"
@@ -54,17 +61,17 @@ const selectedRarity = ref(props.properties.rarity);
       </ul>
     </section>
 
-    <details class="filter__item filter__rarity">
-      <summary class="filter__rarity-summary">
-        Редкость
-        <SvgTemplate
-          class="filter__rarity-marker"
-          icon-id="dropdown-arrow"
-          view-box="0 0 12 7"
-        />
-      </summary>
-      <div class="filter__rarity-wrapper">
-        <ul class="filter__rarity-list">
+    <div class="filter__rarity-wrapper filter__item">
+      <details ref="accordion" class="filter__rarity">
+        <summary class="filter__rarity-summary accordion__button">
+          Редкость
+          <SvgTemplate
+            class="filter__rarity-marker"
+            icon-id="dropdown-arrow"
+            view-box="0 0 12 7"
+          />
+        </summary>
+        <ul class="filter__rarity-list accordion__content">
           <li
             v-for="rarity in rarityList" :key="rarity"
             class="filter__rarity-item"
@@ -94,12 +101,12 @@ const selectedRarity = ref(props.properties.rarity);
             </label>
           </li>
         </ul>
-      </div>
-    </details>
+      </details>
+    </div>
 
     <input
       type="search" name="поиск" id="filter-search"
-      class="filter__search"
+      class="filter__search filter__item"
       placeholder="поиск"
       :value="properties.search.value"
       @input="emit('changeFilter', { search: $event.target.value })"
@@ -116,19 +123,13 @@ const selectedRarity = ref(props.properties.rarity);
 
   &__container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: clamp(0.75rem, 2.5vw, 1.5rem);
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
   &__item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-
-    @media (max-width: $mobile) {
-      flex: 0 0 100%;
-    }
+    height: 3rem;
   }
 
   &__title {
@@ -141,12 +142,21 @@ const selectedRarity = ref(props.properties.rarity);
   }
 
   &__rarity {
-    position: relative;
-    cursor: pointer;
-    min-width: min(15rem, 100%);
+    &-wrapper {
+      flex-basis: 14rem;
+      @media (min-width: calc($tablet-portrait + 1px)) {
+        flex-shrink: 0; flex-grow: 0;
+      }
+      @media (max-width: $tablet-portrait) {
+        flex-shrink: 1; flex-grow: 1;
+      }
+    }
+
+    &-summary, &-label {
+      cursor: pointer;
+    }
 
     &-summary {
-      height: 3rem;
       color: #fff;
       font-size: 1.5rem;
       font-weight: 400;
@@ -161,6 +171,7 @@ const selectedRarity = ref(props.properties.rarity);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 0.75rem;
     }
 
     &-marker {
@@ -171,35 +182,17 @@ const selectedRarity = ref(props.properties.rarity);
       scale: 1 -1;
     }
 
-    &-wrapper {
-      @media (min-width: calc($mobile + 1px)) {
-        position: absolute;
-        width: 100%;
-      }
-      overflow: hidden;
-      margin-top: -0.75rem;
-    }
-
     &-list {
       display: flex;
       flex-direction: column;
       gap: 4px;
-
-      @keyframes details-open {
-        from {
-          translate: 0 -100%;
-        }
-        to {
-          translate: 0 0;
-        }
-      }
-      animation: details-open 200ms ease;
 
       background-color: colors.$blue-gray-dark;
       border-radius: 0 0 0.75rem 0.75rem;
       border: 2px solid colors.$gray;
       padding-top: 1rem;
       padding-bottom: 0.5rem;
+      margin-top: -0.75rem;
     }
 
     &-item {
@@ -214,6 +207,7 @@ const selectedRarity = ref(props.properties.rarity);
     }
 
     &-input {
+      z-index: -1;
       opacity: 0;
       position: absolute;
     }
@@ -252,15 +246,10 @@ const selectedRarity = ref(props.properties.rarity);
       white-space: nowrap;
       overflow: hidden;
     }
-
-    &-input, &-label {
-      cursor: pointer;
-    }
   }
 
   &__search {
     width: 100%;
-    height: 3rem;
     flex: 1 1 14rem;
 
     font-size: 1.5rem;
@@ -277,14 +266,27 @@ const selectedRarity = ref(props.properties.rarity);
   &__game {
     $border-radius: 0.75rem;
     $border-width: 2px;
+
     display: flex;
-    gap: $border-width;
-    border: $border-width solid transparent;
-    width: 100%;
+    align-items: center;
+    gap: 0.75rem;
+    @media (min-width: calc($mobile + 1px)) {
+      flex: 0 0 auto;
+    }
+    @media (max-width: $mobile) {
+      flex: 1 1 0;
+    }
+
+    &-list {
+      display: flex;
+      gap: $border-width;
+      border: $border-width solid transparent;
+      width: 100%;
+    }
 
     &-item {
       width: 100%;
-      height: calc(3rem - $border-width * 2);
+      height: 100%;
     }
     &-item:first-child &-label {
       border-radius: $border-radius 0 0 $border-radius;
