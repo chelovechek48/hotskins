@@ -61,8 +61,8 @@ const selectedRarity = ref(props.properties.rarity);
       </ul>
     </section>
 
-    <div class="filter__rarity-wrapper filter__item">
-      <details ref="accordion" class="filter__rarity">
+    <div class="filter__rarity filter__item">
+      <details ref="accordion">
         <summary class="filter__rarity-summary accordion__button">
           Редкость
           <SvgTemplate
@@ -142,14 +142,13 @@ const selectedRarity = ref(props.properties.rarity);
   }
 
   &__rarity {
-    &-wrapper {
-      flex-basis: 14rem;
-      @media (min-width: calc($tablet-portrait + 1px)) {
-        flex-shrink: 0; flex-grow: 0;
-      }
-      @media (max-width: $tablet-portrait) {
-        flex-shrink: 1; flex-grow: 1;
-      }
+    z-index: 10;
+    flex-basis: 14rem;
+    @media (min-width: calc($tablet-portrait + 1px)) {
+      flex-shrink: 0; flex-grow: 0;
+    }
+    @media (max-width: $tablet-portrait) {
+      flex-shrink: 1; flex-grow: 1;
     }
 
     &-summary, &-label {
@@ -161,8 +160,6 @@ const selectedRarity = ref(props.properties.rarity);
       font-size: 1.5rem;
       font-weight: 400;
 
-      z-index: 1;
-      position: relative;
       background-color: colors.$indigo;
       border-radius: 0.75rem;
       border: 2px solid colors.$gray;
@@ -178,11 +175,14 @@ const selectedRarity = ref(props.properties.rarity);
       transition: scale 200ms ease;
       height: 0.6rem;
     }
-    &[open] &-marker {
+    details[open] &-marker {
       scale: 1 -1;
     }
 
     &-list {
+      z-index: -1;
+      position: relative;
+
       display: flex;
       flex-direction: column;
       gap: 4px;

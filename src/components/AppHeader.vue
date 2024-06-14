@@ -1,7 +1,15 @@
+<!-- eslint-disable no-new -->
 <script setup>
+import { ref, onMounted } from 'vue';
 import SvgTemplate from '@components/SvgTemplate.vue';
 import ImgTemplate from '@components/ImgTemplate.vue';
 import { useStore } from 'vuex';
+import Accordion from '@js/accordion.js';
+
+const accordion = ref(null);
+onMounted(() => {
+  new Accordion(accordion.value);
+});
 
 const { user } = useStore().state;
 
@@ -43,54 +51,57 @@ const logout = () => {
           </li>
         </ul>
       </nav>
-      <details
-        v-if="user.authorized"
-        class="header__dropdown-wrapper"
-      >
-        <summary class="header__dropdown">
-          <ImgTemplate
-            class="header__dropdown-avatar"
-            :src="user.avatar"
-          />
-          <span class="header__dropdown-nickname">
-            {{ user.nickname }}
-          </span>
-          <SvgTemplate
-            class="header__dropdown-marker"
-            icon-id="dropdown-arrow"
-            view-box="0 0 12 7"
-          />
-          <div class="header__burger">
-            <div class="header__burger-item" />
-          </div>
-        </summary>
-        <aside class="header__dropdown-details">
-          <router-link
-            class="header__button header__dropdown-link"
-            :to="{ name: 'login' }"
-            @click="logout"
-          >
-            Сменить аккаунт
-          </router-link>
-          <ul class="header__dropdown-list">
-            <li v-for="link in menuLinks" :key="link.route">
-              <router-link
-                class="header__dropdown-link"
-                :to="link.route"
-              >
-                {{ link.label }}
-              </router-link>
-            </li>
-          </ul>
-        </aside>
-      </details>
-      <router-link
-        v-else
-        class="header__button"
-        :to="{ name: 'login' }"
-      >
-        Войти
-      </router-link>
+      <div class="header__dropdown-wrapper">
+        <details
+          v-if="user.authorized"
+          class="header__dropdown"
+          ref="accordion"
+        >
+          <summary class="header__dropdown-summary accordion__button">
+            <ImgTemplate
+              class="header__dropdown-avatar"
+              :src="user.avatar"
+            />
+            <span class="header__dropdown-nickname">
+              {{ user.nickname }}
+            </span>
+            <SvgTemplate
+              class="header__dropdown-marker"
+              icon-id="dropdown-arrow"
+              view-box="0 0 12 7"
+            />
+            <div class="header__burger">
+              <div class="header__burger-item" />
+            </div>
+          </summary>
+          <aside class="header__dropdown-details accordion__content">
+            <router-link
+              class="header__button header__dropdown-link"
+              :to="{ name: 'login' }"
+              @click="logout"
+            >
+              Сменить аккаунт
+            </router-link>
+            <ul class="header__dropdown-list">
+              <li v-for="link in menuLinks" :key="link.route">
+                <router-link
+                  class="header__dropdown-link"
+                  :to="link.route"
+                >
+                  {{ link.label }}
+                </router-link>
+              </li>
+            </ul>
+          </aside>
+        </details>
+        <router-link
+          v-else
+          class="header__button"
+          :to="{ name: 'login' }"
+        >
+          Войти
+        </router-link>
+      </div>
     </div>
   </header>
 </template>
@@ -104,7 +115,7 @@ const logout = () => {
   $header-padding: clamp(0.75rem, 2vw, 1rem);
   $header-height: calc($logo-height + 2 * $header-padding);
 
-  z-index: 100;
+  z-index: 1000;
   color: colors.$white;
   background-color: colors.$blue-gray-dark;
   border-bottom: 2px solid colors.$blue-gray-medium;
@@ -120,6 +131,7 @@ const logout = () => {
 
   &__logo {
     position: relative;
+    z-index: 1000;
     overflow: hidden;
 
     height: $logo-height;
@@ -163,62 +175,54 @@ const logout = () => {
   }
 
   &__dropdown {
-    display: flex;
-    align-items: center;
-    gap: 0 0.75rem;
-    cursor: pointer;
+    $wrapper-padding: clamp(0.5rem, 2vw, 1rem);
 
     &-wrapper {
-      $wrapper-padding: clamp(0.5rem, 2vw, 1rem);
+      height: calc($logo-height + $header-padding * 2);
+      margin-block: calc(0px - $header-padding);
 
-      transition: background-color 200ms ease;
-      position: relative;
-      padding: $wrapper-padding; margin-block: calc(0px - clamp(0.5rem, 2vw, 1rem));
-      background-color: colors.$blue-gray-dark;
-      @media (min-width: calc($tablet-portrait + 1px)) {
-        &:hover, &[open] {
-          background-color: colors.$blue-gray-medium;
-        }
-      }
       @media (max-width: $tablet-portrait) {
-        margin-right: calc(0px - $container-padding);
+        position: absolute;
+        width: 100%;
+        left: 0;
       }
+    }
+
+    transition: box-shadow 250ms ease;
+    &:hover,
+    &[open] {
+      box-shadow: 0 2px 0 0 rgba(colors.$gray, 0.5);
+    }
+
+    &-summary {
+      height: calc($logo-height + $header-padding * 2);
+      display: flex;
+      align-items: center;
+      gap: 0 0.75rem;
+      cursor: pointer;
+      padding-inline: $wrapper-padding;
+      outline-offset: calc(0px - $wrapper-padding / 2);
+      transition: background-color 250ms ease;
+      background-color: colors.$blue-gray-dark;
+      &:hover {
+        background-color: colors.$blue-gray-medium;
+      }
+
+      @media (max-width: $tablet-portrait) {
+        justify-content: flex-end;
+      }
+    }
+    &[open] &-summary {
+      background-color: colors.$blue-gray-medium;
     }
 
     &-details {
       $border-width: 4px;
 
-      width: calc(100% + $border-width * 2);
       max-height: calc(100dvh - $header-height);
-      overflow-y: auto;
-
-      z-index: -1;
-      position: absolute;
-      top: calc(100% - $border-width); right: -$border-width;
-      padding-block: 0.5rem 1rem;
-      padding-inline: 1rem;
-      border: $border-width solid colors.$blue-gray-dark;
-
-      @media (min-width: calc($tablet-portrait + 1px)) {
-        border-radius: 0 0 2rem 2rem;
-      }
-      @media (max-width: $tablet-portrait) {
-        position: fixed;
-        top: $header-height;
-        left: 0;
-      }
-
       background-color: colors.$blue-gray-medium;
-      @keyframes details-open {
-        from {
-          translate: 0 -100%;
-          background-color: colors.$blue-gray-dark;
-        }
-        to {
-          translate: 0 0;
-        }
-      }
-      animation: details-open 200ms ease;
+      padding: $wrapper-padding;
+      overflow-y: auto;
     }
 
     &-avatar {
@@ -255,7 +259,7 @@ const logout = () => {
         transition: scale 200ms ease;
         height: 0.6rem;
       }
-      &-wrapper[open] &-marker {
+      &[open] &-marker {
         scale: 1 -1;
       }
       &-list {
@@ -314,7 +318,7 @@ const logout = () => {
         content: '';
       }
     }
-    &__dropdown-wrapper[open] &__burger {
+    &__dropdown[open] &__burger {
       &::before {
         rotate: 45deg;
         translate: 0 calc($burger-height / 2);
