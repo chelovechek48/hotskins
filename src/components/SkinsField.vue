@@ -193,10 +193,8 @@ const changeSkins = (skin) => {
   &__input:focus-visible + & {
     background-color: colors.$blue-gray-dark;
   }
-  @media (hover: hover) {
-    &__input:hover + & {
-      background-color: colors.$blue-gray-dark;
-    }
+  &__input:hover + & {
+    background-color: colors.$blue-gray-dark;
   }
 
   &__input:focus-visible + & {
@@ -229,10 +227,8 @@ const changeSkins = (skin) => {
     }
   }
 
-  @media (hover: hover) {
-    &__input:hover + & &__label {
-      opacity: 1;
-    }
+  &__input:hover + & &__label {
+    opacity: 1;
   }
   &__input:focus-visible + & &__label {
     opacity: 1;
@@ -248,10 +244,8 @@ const changeSkins = (skin) => {
     opacity: 1;
     transition: opacity 200ms ease;
   }
-  @media (hover: hover) {
-    &__input:hover + & &__image {
-      opacity: 0.5;
-    }
+  &__input:hover + & &__image {
+    opacity: 0.5;
   }
   &__input:focus-visible + & &__image {
     opacity: 0.5;
