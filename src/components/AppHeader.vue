@@ -8,7 +8,7 @@ import Accordion from '@js/accordion.js';
 
 const accordion = ref(null);
 onMounted(() => {
-  new Accordion(accordion.value);
+  accordion.value = new Accordion(accordion.value);
 });
 
 const { user } = useStore().state;
@@ -23,6 +23,7 @@ const menuLinks = [
 const logout = () => {
   user.authorized = false;
   localStorage.setItem('authorized', false);
+  accordion.value.shrink();
 };
 </script>
 
@@ -51,9 +52,8 @@ const logout = () => {
           </li>
         </ul>
       </nav>
-      <div class="header__dropdown-wrapper">
+      <div v-show="user.authorized" class="header__dropdown-wrapper">
         <details
-          v-if="user.authorized"
           class="header__dropdown"
           ref="accordion"
         >
@@ -94,14 +94,14 @@ const logout = () => {
             </ul>
           </aside>
         </details>
-        <router-link
-          v-else
-          class="header__button"
-          :to="{ name: 'login' }"
-        >
-          Войти
-        </router-link>
       </div>
+      <router-link
+        v-show="!user.authorized"
+        class="header__button"
+        :to="{ name: 'login' }"
+      >
+        Войти
+      </router-link>
     </div>
   </header>
 </template>

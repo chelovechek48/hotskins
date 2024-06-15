@@ -63,7 +63,7 @@ const selectedRarity = ref(props.properties.rarity);
 
     <div class="filter__rarity filter__item">
       <details ref="accordion">
-        <summary class="filter__rarity-summary accordion__button">
+        <summary class="filter__rarity-summary filter__item accordion__button">
           Редкость
           <SvgTemplate
             class="filter__rarity-marker"
