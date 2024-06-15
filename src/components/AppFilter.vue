@@ -54,7 +54,6 @@ const selectedRarity = ref(props.properties.rarity);
             <SvgTemplate
               class="filter__game-icon"
               :icon-id="game.id"
-              :sprite="spritePath"
             />
           </label>
         </li>
