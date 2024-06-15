@@ -7,8 +7,6 @@
 		</style>
 	</defs>
 
-  <svg id="rust"
-		viewBox="0 0 128 128" fill="none">
-		<path fill="#FFFFFF" d="m68 59-9 9 9 9 9-9-9-9ZM88 71 71 88l8 7 16-16-7-8ZM101 84l-17 17 21 27 23-23-27-21ZM56 52h24V42H56v10ZM56 34h24l5-34H51l5 34ZM52 80V56H42v24h10ZM34 80V56L0 51v34l34-5Z"/>
-	</svg>
+  <svg id="rust" viewBox="0 0 128 128" fill="none"><path fill="#FFFFFF" d="m68 59-9 9 9 9 9-9-9-9ZM88 71 71 88l8 7 16-16-7-8ZM101 84l-17 17 21 27 23-23-27-21ZM56 52h24V42H56v10ZM56 34h24l5-34H51l5 34ZM52 80V56H42v24h10ZM34 80V56L0 51v34l34-5Z"/></svg>
+
 </svg>
