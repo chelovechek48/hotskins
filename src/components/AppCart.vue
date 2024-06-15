@@ -1,13 +1,10 @@
 <!-- eslint-disable no-new -->
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import {
+  ref, computed, onMounted, onUpdated,
+} from 'vue';
 import { useStore } from 'vuex';
 import Accordion from '@js/accordion.js';
-
-const accordion = ref(null);
-onMounted(() => {
-  new Accordion(accordion.value);
-});
 
 const { state } = useStore();
 
@@ -25,18 +22,37 @@ const orderPrice = computed(
 );
 const skinsCount = computed(() => props.selectedSkins.length);
 
+const accordionDOM = ref(null);
+const accordionConstructor = ref(null);
+const accordionHasOpen = ref(false);
+
+onMounted(() => {
+  accordionConstructor.value = new Accordion(accordionDOM.value);
+});
+onUpdated(() => {
+  if (skinsCount.value >= 1 && !accordionHasOpen.value) {
+    accordionHasOpen.value = true;
+    accordionConstructor.value.open();
+    const list = accordionDOM.value.querySelector('ul');
+    list.style.height = `${list.offsetHeight}px`;
+  } else if (skinsCount.value === 0) {
+    accordionConstructor.value.shrink();
+  }
+});
+
 </script>
 
 <template>
   <aside class="cart__wrapper">
     <details
-      ref="accordion"
+      ref="accordionDOM"
       class="cart page-container"
     >
       <summary class="cart__container" tabindex="-1">
         <button
           class="cart__button cart__toggle accordion__button"
           :data-count="skinsCount"
+          :disabled="skinsCount === 0"
         >
           Предметы
         </button>
@@ -50,7 +66,7 @@ const skinsCount = computed(() => props.selectedSkins.length);
           Сбросить
         </button>
       </summary>
-      <aside v-show="skinsCount" class="cart__content accordion__content">
+      <aside class="cart__content accordion__content">
         <slot />
       </aside>
     </details>
@@ -62,6 +78,8 @@ const skinsCount = computed(() => props.selectedSkins.length);
 @use '@vars/colors';
 
 .cart {
+  overflow: hidden;
+
   &__wrapper {
     z-index: 100;
     position: sticky;
@@ -114,6 +132,9 @@ const skinsCount = computed(() => props.selectedSkins.length);
       background-color: colors.$gray;
       border-radius: 50%;
       margin-block: -1em;
+    }
+    &:disabled {
+      cursor: not-allowed;
     }
   }
 }
