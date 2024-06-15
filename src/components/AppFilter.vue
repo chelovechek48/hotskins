@@ -156,6 +156,9 @@ const selectedRarity = ref(props.properties.rarity);
     }
 
     &-summary {
+      z-index: 1;
+      position: relative;
+
       color: #fff;
       font-size: 1.5rem;
       font-weight: 400;
@@ -180,9 +183,6 @@ const selectedRarity = ref(props.properties.rarity);
     }
 
     &-list {
-      z-index: -1;
-      position: relative;
-
       display: flex;
       flex-direction: column;
       gap: 4px;
