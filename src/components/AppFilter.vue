@@ -62,7 +62,7 @@ const selectedRarity = ref(props.properties.rarity);
     </section>
 
     <div class="filter__rarity filter__item">
-      <details ref="accordion">
+      <details class="filter__rarity-details" ref="accordion">
         <summary class="filter__rarity-summary filter__item accordion__button">
           Редкость
           <SvgTemplate
@@ -155,6 +155,12 @@ const selectedRarity = ref(props.properties.rarity);
       cursor: pointer;
     }
 
+    &-details {
+      box-shadow: 0 0 0 2px colors.$gray inset;
+      border-radius: 0.75rem;
+      background-color: colors.$blue-gray-dark;
+    }
+
     &-summary {
       z-index: 1;
       position: relative;
@@ -165,8 +171,8 @@ const selectedRarity = ref(props.properties.rarity);
 
       background-color: colors.$indigo;
       border-radius: 0.75rem;
-      border: 2px solid colors.$gray;
-      padding: 0.5rem 1rem;
+      box-shadow: 0 0 0 2px colors.$gray inset;
+      padding-inline: 1rem;
 
       display: flex;
       align-items: center;
@@ -178,21 +184,21 @@ const selectedRarity = ref(props.properties.rarity);
       transition: scale 200ms ease;
       height: 0.6rem;
     }
-    details[open] &-marker {
+    &-details[open] &-marker {
       scale: 1 -1;
     }
 
     &-list {
+      border-left: solid 2px colors.$gray;
+      border-right: solid 2px colors.$gray;
+      border-bottom: solid 2px colors.$gray;
       display: flex;
       flex-direction: column;
       gap: 4px;
 
-      background-color: colors.$blue-gray-dark;
       border-radius: 0 0 0.75rem 0.75rem;
-      border: 2px solid colors.$gray;
-      padding-top: 1rem;
+      padding-top: 0.25rem;
       padding-bottom: 0.5rem;
-      margin-top: -0.75rem;
     }
 
     &-item {
