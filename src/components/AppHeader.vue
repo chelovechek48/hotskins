@@ -256,8 +256,9 @@ const logout = () => {
 
     @media (min-width: calc($tablet-portrait + 1px)) {
       &-marker {
-        transition: scale 200ms ease;
+        color: colors.$gray;
         height: 0.6rem;
+        transition: scale 200ms ease;
       }
       &[open] &-marker {
         scale: 1 -1;

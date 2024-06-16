@@ -181,8 +181,9 @@ const selectedRarity = ref(props.properties.rarity);
     }
 
     &-marker {
-      transition: scale 200ms ease;
+      color: colors.$gray;
       height: 0.6rem;
+      transition: scale 200ms ease;
     }
     &-details[open] &-marker {
       scale: 1 -1;
