@@ -11,7 +11,7 @@
 
 	<svg id="dropdown-arrow"
 		viewBox="0 0 12 7" fill="none">
-		<path stroke="var(--gray)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5 5 5-5"/>
+		<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5 5 5-5"/>
 	</svg>
 
 	<svg id="eye-open"
@@ -38,5 +38,16 @@
 	<svg id="clock"
 		viewBox="0 0 20 20" fill="none">
 		<path fill="currentColor" d="m13.3 14.7 1.4-1.4L11 9.6V5H9v5.4l4.3 4.3ZM10 20a10.1 10.1 0 0 1-9.21-6.1A9.74 9.74 0 0 1 0 10 10.1 10.1 0 0 1 6.1.79 9.74 9.74 0 0 1 10 0a10.1 10.1 0 0 1 9.21 6.1c.53 1.22.79 2.52.79 3.9s-.26 2.68-.79 3.9a10.1 10.1 0 0 1-5.31 5.31A9.74 9.74 0 0 1 10 20Zm0-2c2.22 0 4.1-.78 5.66-2.34A7.71 7.71 0 0 0 18 10c0-2.22-.78-4.1-2.34-5.66A7.71 7.71 0 0 0 10 2c-2.22 0-4.1.78-5.66 2.34A7.71 7.71 0 0 0 2 10c0 2.22.78 4.1 2.34 5.66A7.71 7.71 0 0 0 10 18Z"/>
+	</svg>
+	
+	<svg id="reset"
+		viewBox="0 0 16 16" fill="none">
+		<path fill="currentColor" d="M8 16a7.72 7.72 0 0 1-5.67-2.32A7.72 7.72 0 0 1 0 8c0-2.23.78-4.13 2.33-5.67A7.72 7.72 0 0 1 8 0a7.92 7.92 0 0 1 6 2.75V0h2v7H9V5h4.2A5.93 5.93 0 0 0 8 2c-1.67 0-3.08.58-4.25 1.75A5.79 5.79 0 0 0 2 8c0 1.67.58 3.08 1.75 4.25A5.79 5.79 0 0 0 8 14c1.28 0 2.44-.37 3.47-1.1a5.8 5.8 0 0 0 2.18-2.9h2.1a7.9 7.9 0 0 1-2.85 4.32A7.76 7.76 0 0 1 8 16Z"/>
+	</svg>
+
+	
+	<svg id="double-arrow-right"
+		viewBox="0 0 14 12" fill="none">
+		<path fill="currentColor" d="M4.6 6 0 1.4 1.4 0l6 6-6 6L0 10.6 4.6 6Zm6.6 0L6.6 1.4 8 0l6 6-6 6-1.4-1.4L11.2 6Z"/>
 	</svg>
 </svg>
