@@ -30,6 +30,12 @@ const rarityList = computed(() => {
 
 const selectedRarity = ref(props.properties.rarity);
 
+const search = ref(null);
+const resetSearch = () => {
+  emit('changeFilter', { search: '' });
+  search.value.focus();
+};
+
 </script>
 
 <template>
@@ -104,13 +110,26 @@ const selectedRarity = ref(props.properties.rarity);
       </details>
     </div>
 
-    <input
-      type="search" name="поиск" id="filter-search"
-      class="filter__search filter__item"
-      placeholder="поиск"
-      :value="properties.search.value"
-      @input="emit('changeFilter', { search: $event.target.value })"
-    >
+    <div class="filter__search-wrapper filter__item">
+      <input
+        ref="search"
+        type="search" name="поиск" id="filter-search"
+        class="filter__search"
+        placeholder="поиск"
+        :value="properties.search.value"
+        @input="emit('changeFilter', { search: $event.target.value })"
+      >
+      <button
+        :class="properties.search.value ? 'active' : ''"
+        class="filter__search-marker"
+        @click="resetSearch()"
+      >
+        <SvgTemplate
+          icon-id="search-marker"
+          viewBox="0 0 17 13"
+        />
+      </button>
+    </div>
   </div>
 </template>
 
@@ -257,7 +276,28 @@ const selectedRarity = ref(props.properties.rarity);
 
   &__search {
     width: 100%;
-    flex: 1 1 14rem;
+    &-wrapper {
+      flex: 1 1 14rem;
+      position: relative;
+    }
+    &-marker {
+      color: colors.$gray;
+      background-color: transparent;
+
+      height: 100%;
+      padding: 0.75rem 1rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      transition: all 100ms ease;
+      opacity: 0;
+      visibility: hidden;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
 
     font-size: 1.5rem;
     color: #fff;
@@ -265,8 +305,7 @@ const selectedRarity = ref(props.properties.rarity);
     border-radius: 0.75rem;
     border: 2px solid colors.$gray;
 
-    padding-inline: 1rem;
-    padding-block: 0.5rem;
+    padding: 0.5rem 1rem;
     appearance: none;
   }
 
