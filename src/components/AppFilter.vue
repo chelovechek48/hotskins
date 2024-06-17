@@ -282,7 +282,6 @@ const resetSearch = () => {
       position: relative;
     }
     &-marker {
-      display: none;
       color: colors.$gray;
       background-color: transparent;
 
