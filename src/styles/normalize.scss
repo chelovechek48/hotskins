@@ -25,3 +25,6 @@ html {
 summary::-webkit-details-marker {
   display: none;
 }
+input[type="search"]::-webkit-search-cancel-button {
+  appearance: none;
+}

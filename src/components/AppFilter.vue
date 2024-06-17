@@ -276,11 +276,13 @@ const resetSearch = () => {
 
   &__search {
     width: 100%;
+
     &-wrapper {
       flex: 1 1 14rem;
       position: relative;
     }
     &-marker {
+      display: none;
       color: colors.$gray;
       background-color: transparent;
 
@@ -306,7 +308,6 @@ const resetSearch = () => {
     border: 2px solid colors.$gray;
 
     padding: 0.5rem 1rem;
-    appearance: none;
   }
 
   &__game {
