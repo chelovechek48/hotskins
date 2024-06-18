@@ -1,0 +1,15 @@
+@mixin scrollbar($track, $thumb) {
+  scrollbar-width: auto;
+  scrollbar-color: $thumb $track;
+
+  &::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $thumb;
+  }
+  &::-webkit-scrollbar-track {
+    background: $track;
+  }
+}

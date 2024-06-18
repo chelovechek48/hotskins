@@ -276,6 +276,7 @@ const resetSearch = () => {
 
   &__search {
     width: 100%;
+    height: 100%;
 
     &-wrapper {
       flex: 1 1 14rem;
@@ -291,7 +292,9 @@ const resetSearch = () => {
       top: 0;
       right: 0;
 
-      transition: all 100ms ease;
+      transition:
+        opacity 150ms ease,
+        visibility 150ms ease;
       opacity: 0;
       visibility: hidden;
       &.active {

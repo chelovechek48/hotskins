@@ -15,6 +15,14 @@ import AppFooter from '@components/AppFooter.vue';
 @forward '@styles';
 @use '@vars/colors';
 @use '@vars/breakpoints' as *;
+@use '@vars/mixins';
+
+html {
+  @include mixins.scrollbar(
+    $thumb: colors.$gray,
+    $track: colors.$indigo
+  );
+}
 
 body {
   background-color: colors.$indigo;

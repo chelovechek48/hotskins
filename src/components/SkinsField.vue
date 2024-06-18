@@ -120,6 +120,7 @@ const changeSkins = (skin) => {
 
 <style lang="scss" scoped>
 @use '@vars/colors';
+@use '@vars/mixins';
 
 .card {
   cursor: pointer;
@@ -141,6 +142,11 @@ const changeSkins = (skin) => {
       margin-inline: -0.75rem;
       padding-block: clamp(0.75rem, 2vw, 1rem);
       margin-top: calc(0px - clamp(0.75rem, 2vw, 1rem) * 2);
+
+      @include mixins.scrollbar(
+        $thumb: darken(colors.$white, 15),
+        $track: darken(colors.$white, 0)
+      );
     }
     &_inline &-item {
       position: relative;
