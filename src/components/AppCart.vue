@@ -1,7 +1,7 @@
 <!-- eslint-disable no-new -->
 <script setup>
 import {
-  ref, computed, onMounted, onUpdated,
+  ref, computed, onMounted, onUpdated, watch,
 } from 'vue';
 import { useStore } from 'vuex';
 import Accordion from '@js/accordion.js';
@@ -27,21 +27,35 @@ const accordionDOM = ref(null);
 const accordionContentDOM = ref(null);
 const accordionConstructor = ref(null);
 const accordionIsLocked = ref(false);
+const accordionIsOpen = ref(false);
+
+watch(
+  () => accordionIsOpen.value,
+  (IsOpen) => {
+    if (IsOpen) {
+      accordionConstructor.value.open();
+      accordionContentDOM.value.style.height = `${accordionContentDOM.value.offsetHeight}px`;
+    } else {
+      accordionConstructor.value.shrink();
+    }
+  },
+);
 
 onMounted(() => {
   accordionConstructor.value = new Accordion(accordionDOM.value);
 });
 onUpdated(() => {
-  if (window.innerHeight > 850 && !accordionIsLocked.value) {
-    if (skinsCount.value >= 1) {
-      accordionConstructor.value.open();
-      accordionContentDOM.value.style.height = '';
-      accordionContentDOM.value.style.height = `${accordionContentDOM.value.offsetHeight}px`;
-    } else if (skinsCount.value === 0) {
-      accordionConstructor.value.shrink();
-    }
+  if (skinsCount.value >= 1 && window.innerHeight > 850 && !accordionIsLocked.value) {
+    accordionIsOpen.value = true;
+  } else if (skinsCount.value === 0) {
+    accordionIsOpen.value = false;
   }
 });
+
+const toggleAccordion = () => {
+  accordionIsLocked.value = !accordionIsLocked.value;
+  accordionIsOpen.value = true;
+};
 
 </script>
 
@@ -56,7 +70,7 @@ onUpdated(() => {
           class="cart__button cart__button_toggle accordion__button"
           :data-count="skinsCount"
           :disabled="skinsCount === 0"
-          @click="accordionIsLocked = !accordionIsLocked"
+          @click="toggleAccordion()"
         >
           <SvgTemplate
             class="cart__button-icon"
