@@ -35,7 +35,7 @@ onUpdated(() => {
   if (window.innerHeight > 850 && !accordionIsLocked.value) {
     if (skinsCount.value >= 1) {
       accordionConstructor.value.open();
-      accordionContentDOM.value.style.height = `${accordionContentDOM.value.offsetHeight}px`;
+      accordionContentDOM.value.style.minHeight = `${accordionContentDOM.value.offsetHeight}px`;
     } else if (skinsCount.value === 0) {
       accordionConstructor.value.shrink();
     }
