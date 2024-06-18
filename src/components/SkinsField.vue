@@ -60,18 +60,18 @@ const changeSkins = (skin) => {
 <template>
   <ul :class="`card__list card__list_${listStyle}`">
     <li
-      v-for="skin in skins" :key="listStyle + skin.pattern.en"
+      v-for="(skin, index) in skins" :key="listStyle + index"
       class="card__list-item"
     >
       <input
-        type="checkbox" name="скин" :id="listStyle + skin.pattern.en"
+        type="checkbox" name="скин" :id="listStyle + index"
         class="card__input"
         :disabled="getTimer(skin['trade-ban'])"
         :checked="selectedSkins.includes(skin)"
         @change="changeSkins(skin)"
       >
       <label
-        :for="listStyle + skin.pattern.en"
+        :for="listStyle + index"
         class="card"
         :style="`color: var(--color-${skin.rarity})`"
       >

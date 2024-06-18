@@ -1,80 +1,145 @@
 [
   {
-    "game": "cs-go",
-    "slot": "AWP",
-    "pattern": {
-      "ru": "БАХ",
-      "en": "BOOM"
-    },
-    "rarity": "classified",
-    "price": "12000",
-    "image": {
-      "image/png": {
-        "1x": "skins/cs-go/AWP_BOOM.png"
-      }
-    }
-  },
-  {
-    "game": "cs-go",
+    "game": "cs-2",
     "slot": "AK-47",
     "pattern": {
-      "ru": "Вулкан",
-      "en": "Vulcan"
+      "ru": "Наследство",
+      "en": "Inheritance"
     },
-    "rarity": "covert",
-    "price": "9000",
+    "rarity": "тайное",
+    "price": "6418.04",
     "image": {
       "image/png": {
-        "1x": "skins/cs-go/AK-47_Vulcan.png"
+        "1x": "skins/cs2/AK-47_Inheritance@1x.png",
+        "2x": "skins/cs2/AK-47_Inheritance@2x.png"
       }
     }
   },
   {
-    "game": "cs-go",
+    "game": "cs-2",
+    "slot": "AUG",
+    "pattern": {
+      "ru": "Наемник",
+      "en": "Contractor"
+    },
+    "rarity": "ширпотреб",
+    "price": "5.53",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/AUG_Contractor@1x.png",
+        "2x": "skins/cs2/AUG_Contractor@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "FAMAS",
+    "pattern": {
+      "ru": "Макабр",
+      "en": "Macabre"
+    },
+    "rarity": "армейское",
+    "price": "391.64",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/FAMAS_Macabre@1x.png",
+        "2x": "skins/cs2/FAMAS_Macabre@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "MP7",
+    "pattern": {
+      "ru": "Генератор",
+      "en": "Powercore"
+    },
+    "rarity": "запрещенное",
+    "price": "363.18",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/MP7_Powercore@1x.png",
+        "2x": "skins/cs2/MP7_Powercore@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
     "slot": "Nova",
     "pattern": {
-      "ru": "Пыльник",
-      "en": "Rust Coat"
+      "ru": "Антиквариат",
+      "en": "Antique"
     },
-    "rarity": "industrial-grade",
-    "price": "500",
+    "rarity": "засекреченное",
+    "price": "1438.56",
     "image": {
       "image/png": {
-        "1x": "skins/cs-go/Nova_Rust-Coat.png"
+        "1x": "skins/cs2/Nova_Antique@1x.png",
+        "2x": "skins/cs2/Nova_Antique@2x.png"
       }
     }
   },
   {
-    "game": "cs-go",
-    "slot": {
-      "ru": "Нож-бабочка",
-      "en": "Butterfly Knife"
-    },
+    "game": "cs-2",
+    "slot": "Nova",
     "pattern": {
-      "ru": "Ручная роспись",
-      "en": "Freehand"
+      "ru": "Антиквариат",
+      "en": "Antique"
     },
-    "rarity": "covert",
-    "price": "150000",
+    "rarity": "засекреченное",
+    "price": "1438.56",
     "image": {
       "image/png": {
-        "1x": "skins/cs-go/Butterfly-Knife_Freehand.png"
+        "1x": "skins/cs2/Nova_Antique@1x.png",
+        "2x": "skins/cs2/Nova_Antique@2x.png"
       }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "P90",
+    "pattern": {
+      "ru": "Слепое пятно",
+      "en": "Blind Spot"
     },
-    "trade-ban": "June 10, 2024 15:46:57"
+    "rarity": "запрещенное",
+    "price": "1138.41",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/P90_Blind-Spot@1x.png",
+        "2x": "skins/cs2/P90_Blind-Spot@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "P2000",
+    "pattern": {
+      "ru": "Янтарный градиент",
+      "en": "Amber Fade"
+    },
+    "rarity": "запрещенное",
+    "price": "995.33",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/P2000_Amber-Fade@1x.png",
+        "2x": "skins/cs2/P2000_Amber-Fade@2x.png"
+      }
+    }
   },
   
   {
     "game": "rust",
-    "slot": "Resource",
+    "slot": "AK47u",
     "pattern": {
-      "en": "Wood"
+      "en": "Cartagena-AK47"
     },
-    "rarity": "resource",
-    "price": "20.3",
+    "rarity": "weapon",
+    "price": "154.06",
     "image": {
       "image/png": {
-        "1x": "skins/rust/Resource_Wood.png"
+        "1x": "skins/rust/AK47u_Cartagena-AK47@1x.png",
+        "2x": "skins/rust/AK47u_Cartagena-AK47@2x.png"
       }
     }
   },
@@ -85,10 +150,56 @@
       "en": "Metal"
     },
     "rarity": "resource",
-    "price": "75.99",
+    "price": "71.16",
     "image": {
       "image/png": {
-        "1x": "skins/rust/Resource_Metal.png"
+        "1x": "skins/rust/Metal@1x.png",
+        "2x": "skins/rust/Metal@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Helmet",
+    "pattern": {
+      "en": "Digger Helmet"
+    },
+    "rarity": "armor",
+    "price": "492",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Rifle-Helmet_Digger-Helmet@1x.png",
+        "2x": "skins/rust/Rifle-Helmet_Digger-Helmet@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Pickaxe",
+    "pattern": {
+      "en": "Winter Pickaxe"
+    },
+    "rarity": "weapon",
+    "price": "183.79",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@1x.png",
+        "2x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "T-Shirt",
+    "pattern": {
+      "en": "Facepunch"
+    },
+    "rarity": "clothing",
+    "price": "21",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/T-Shirt_Facepunch@1x.png",
+        "2x": "skins/rust/T-Shirt_Facepunch@2x.png"
       }
     }
   },
@@ -96,41 +207,14 @@
     "game": "rust",
     "slot": "Resource",
     "pattern": {
-      "en": "Cloth"
+      "en": "Wood"
     },
     "rarity": "resource",
-    "price": "8.68",
+    "price": "18.70",
     "image": {
       "image/png": {
-        "1x": "skins/rust/Resource_Cloth.png"
-      }
-    }
-  },
-  {
-    "game": "rust",
-    "slot": "Assault Rifle",
-    "pattern": {
-      "en": "Rustpunk AK47"
-    },
-    "rarity": "weapon",
-    "price": "236.58",
-    "image": {
-      "image/png": {
-        "1x": "skins/rust/Weapon_Rustpunk-AK47.png"
-      }
-    }
-  },
-  {
-    "game": "rust",
-    "slot": "Chair",
-    "pattern": {
-      "en": "Red Leather"
-    },
-    "rarity": "misc",
-    "price": "668.78",
-    "image": {
-      "image/png": {
-        "1x": "skins/rust/Chair_Red-Leather-Chair.png"
+        "1x": "skins/rust/Wood@1x.png",
+        "2x": "skins/rust/Wood@2x.png"
       }
     }
   }

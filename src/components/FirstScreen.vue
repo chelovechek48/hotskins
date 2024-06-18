@@ -9,7 +9,7 @@
         <h1 class="firstscreen__title">
           Продавайте и обменивайте скины
           <span class="firstscreen__title-games">
-            CS:GO
+            CS:2
           </span>
           и
           <span class="firstscreen__title-games">

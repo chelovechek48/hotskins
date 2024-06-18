@@ -1,19 +1,17 @@
 [
   {
-    "id": "cs-go",
-    "label": "cs:go",
+    "id": "cs-2",
     "rarity": [
-      "consumer-grade",
-      "mil-spec-grade",
-      "industrial-grade",
-      "restricted",
-      "classified",
-      "covert"
+      "ширпотреб",
+      "армейское",
+      "промышленное",
+      "запрещенное",
+      "засекреченное",
+      "тайное"
     ]
   },
   {
     "id": "rust",
-    "label": "rust",
     "rarity": [
       "weapon",
       "misc",

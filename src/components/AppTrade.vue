@@ -115,11 +115,11 @@ const selectedSkins = ref([]);
   --color-armor: #a7ec2e;
   --color-resource: #ffffff;
 
-  --color-consumer-grade: #b0c3d9;
-  --color-mil-spec-grade: #4b69ff;
-  --color-industrial-grade: #5e98d9;
-  --color-restricted: #8847ff;
-  --color-classified: #d32ce6;
-  --color-covert: #eb4b4b;
+  --color-ширпотреб: #b0c3d9;
+  --color-армейское: #4b69ff;
+  --color-промышленное: #5e98d9;
+  --color-запрещенное: #8847ff;
+  --color-засекреченное: #d32ce6;
+  --color-тайное: #eb4b4b;
 }
 </style>
