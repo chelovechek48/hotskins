@@ -86,6 +86,465 @@
   },
   {
     "game": "cs-2",
+    "slot": "P90",
+    "pattern": {
+      "ru": "Слепое пятно",
+      "en": "Blind Spot"
+    },
+    "rarity": "запрещенное",
+    "price": "1138.41",
+    "trade-ban": "June 1, 2024 02:46:38",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/P90_Blind-Spot@1x.png",
+        "2x": "skins/cs2/P90_Blind-Spot@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "P2000",
+    "pattern": {
+      "ru": "Янтарный градиент",
+      "en": "Amber Fade"
+    },
+    "rarity": "запрещенное",
+    "price": "995.33",
+    "trade-ban": "June 2, 2024 20:49:55",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/P2000_Amber-Fade@1x.png",
+        "2x": "skins/cs2/P2000_Amber-Fade@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "AK-47",
+    "pattern": {
+      "ru": "Наследство",
+      "en": "Inheritance"
+    },
+    "rarity": "тайное",
+    "price": "6418.04",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/AK-47_Inheritance@1x.png",
+        "2x": "skins/cs2/AK-47_Inheritance@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "AUG",
+    "pattern": {
+      "ru": "Наемник",
+      "en": "Contractor"
+    },
+    "rarity": "ширпотреб",
+    "price": "5.53",
+    "trade-ban": "June 10, 2024 15:46:57",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/AUG_Contractor@1x.png",
+        "2x": "skins/cs2/AUG_Contractor@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "FAMAS",
+    "pattern": {
+      "ru": "Макабр",
+      "en": "Macabre"
+    },
+    "rarity": "армейское",
+    "price": "391.64",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/FAMAS_Macabre@1x.png",
+        "2x": "skins/cs2/FAMAS_Macabre@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "MP7",
+    "pattern": {
+      "ru": "Генератор",
+      "en": "Powercore"
+    },
+    "rarity": "запрещенное",
+    "price": "363.18",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/MP7_Powercore@1x.png",
+        "2x": "skins/cs2/MP7_Powercore@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "Nova",
+    "pattern": {
+      "ru": "Антиквариат",
+      "en": "Antique"
+    },
+    "rarity": "засекреченное",
+    "price": "1438.56",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/Nova_Antique@1x.png",
+        "2x": "skins/cs2/Nova_Antique@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "P90",
+    "pattern": {
+      "ru": "Слепое пятно",
+      "en": "Blind Spot"
+    },
+    "rarity": "запрещенное",
+    "price": "1138.41",
+    "trade-ban": "June 1, 2024 02:46:38",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/P90_Blind-Spot@1x.png",
+        "2x": "skins/cs2/P90_Blind-Spot@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "P2000",
+    "pattern": {
+      "ru": "Янтарный градиент",
+      "en": "Amber Fade"
+    },
+    "rarity": "запрещенное",
+    "price": "995.33",
+    "trade-ban": "June 2, 2024 20:49:55",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/P2000_Amber-Fade@1x.png",
+        "2x": "skins/cs2/P2000_Amber-Fade@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "AK-47",
+    "pattern": {
+      "ru": "Наследство",
+      "en": "Inheritance"
+    },
+    "rarity": "тайное",
+    "price": "6418.04",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/AK-47_Inheritance@1x.png",
+        "2x": "skins/cs2/AK-47_Inheritance@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "AUG",
+    "pattern": {
+      "ru": "Наемник",
+      "en": "Contractor"
+    },
+    "rarity": "ширпотреб",
+    "price": "5.53",
+    "trade-ban": "June 10, 2024 15:46:57",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/AUG_Contractor@1x.png",
+        "2x": "skins/cs2/AUG_Contractor@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "FAMAS",
+    "pattern": {
+      "ru": "Макабр",
+      "en": "Macabre"
+    },
+    "rarity": "армейское",
+    "price": "391.64",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/FAMAS_Macabre@1x.png",
+        "2x": "skins/cs2/FAMAS_Macabre@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "MP7",
+    "pattern": {
+      "ru": "Генератор",
+      "en": "Powercore"
+    },
+    "rarity": "запрещенное",
+    "price": "363.18",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/MP7_Powercore@1x.png",
+        "2x": "skins/cs2/MP7_Powercore@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "Nova",
+    "pattern": {
+      "ru": "Антиквариат",
+      "en": "Antique"
+    },
+    "rarity": "засекреченное",
+    "price": "1438.56",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/Nova_Antique@1x.png",
+        "2x": "skins/cs2/Nova_Antique@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "P90",
+    "pattern": {
+      "ru": "Слепое пятно",
+      "en": "Blind Spot"
+    },
+    "rarity": "запрещенное",
+    "price": "1138.41",
+    "trade-ban": "June 1, 2024 02:46:38",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/P90_Blind-Spot@1x.png",
+        "2x": "skins/cs2/P90_Blind-Spot@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "P2000",
+    "pattern": {
+      "ru": "Янтарный градиент",
+      "en": "Amber Fade"
+    },
+    "rarity": "запрещенное",
+    "price": "995.33",
+    "trade-ban": "June 2, 2024 20:49:55",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/P2000_Amber-Fade@1x.png",
+        "2x": "skins/cs2/P2000_Amber-Fade@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "AK-47",
+    "pattern": {
+      "ru": "Наследство",
+      "en": "Inheritance"
+    },
+    "rarity": "тайное",
+    "price": "6418.04",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/AK-47_Inheritance@1x.png",
+        "2x": "skins/cs2/AK-47_Inheritance@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "AUG",
+    "pattern": {
+      "ru": "Наемник",
+      "en": "Contractor"
+    },
+    "rarity": "ширпотреб",
+    "price": "5.53",
+    "trade-ban": "June 10, 2024 15:46:57",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/AUG_Contractor@1x.png",
+        "2x": "skins/cs2/AUG_Contractor@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "FAMAS",
+    "pattern": {
+      "ru": "Макабр",
+      "en": "Macabre"
+    },
+    "rarity": "армейское",
+    "price": "391.64",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/FAMAS_Macabre@1x.png",
+        "2x": "skins/cs2/FAMAS_Macabre@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "MP7",
+    "pattern": {
+      "ru": "Генератор",
+      "en": "Powercore"
+    },
+    "rarity": "запрещенное",
+    "price": "363.18",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/MP7_Powercore@1x.png",
+        "2x": "skins/cs2/MP7_Powercore@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "Nova",
+    "pattern": {
+      "ru": "Антиквариат",
+      "en": "Antique"
+    },
+    "rarity": "засекреченное",
+    "price": "1438.56",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/Nova_Antique@1x.png",
+        "2x": "skins/cs2/Nova_Antique@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "P90",
+    "pattern": {
+      "ru": "Слепое пятно",
+      "en": "Blind Spot"
+    },
+    "rarity": "запрещенное",
+    "price": "1138.41",
+    "trade-ban": "June 1, 2024 02:46:38",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/P90_Blind-Spot@1x.png",
+        "2x": "skins/cs2/P90_Blind-Spot@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "P2000",
+    "pattern": {
+      "ru": "Янтарный градиент",
+      "en": "Amber Fade"
+    },
+    "rarity": "запрещенное",
+    "price": "995.33",
+    "trade-ban": "June 2, 2024 20:49:55",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/P2000_Amber-Fade@1x.png",
+        "2x": "skins/cs2/P2000_Amber-Fade@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "AK-47",
+    "pattern": {
+      "ru": "Наследство",
+      "en": "Inheritance"
+    },
+    "rarity": "тайное",
+    "price": "6418.04",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/AK-47_Inheritance@1x.png",
+        "2x": "skins/cs2/AK-47_Inheritance@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "AUG",
+    "pattern": {
+      "ru": "Наемник",
+      "en": "Contractor"
+    },
+    "rarity": "ширпотреб",
+    "price": "5.53",
+    "trade-ban": "June 10, 2024 15:46:57",
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/AUG_Contractor@1x.png",
+        "2x": "skins/cs2/AUG_Contractor@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "FAMAS",
+    "pattern": {
+      "ru": "Макабр",
+      "en": "Macabre"
+    },
+    "rarity": "армейское",
+    "price": "391.64",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/FAMAS_Macabre@1x.png",
+        "2x": "skins/cs2/FAMAS_Macabre@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
+    "slot": "MP7",
+    "pattern": {
+      "ru": "Генератор",
+      "en": "Powercore"
+    },
+    "rarity": "запрещенное",
+    "price": "363.18",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/cs2/MP7_Powercore@1x.png",
+        "2x": "skins/cs2/MP7_Powercore@2x.png"
+      }
+    }
+  },
+  {
+    "game": "cs-2",
     "slot": "Nova",
     "pattern": {
       "ru": "Антиквариат",
@@ -159,6 +618,7 @@
     },
     "rarity": "resource",
     "price": "71.16",
+    "trade-ban": false,
     "image": {
       "image/png": {
         "1x": "skins/rust/Metal@1x.png",
@@ -174,6 +634,7 @@
     },
     "rarity": "armor",
     "price": "492",
+    "trade-ban": false,
     "image": {
       "image/png": {
         "1x": "skins/rust/Rifle-Helmet_Digger-Helmet@1x.png",
@@ -189,6 +650,7 @@
     },
     "rarity": "weapon",
     "price": "183.79",
+    "trade-ban": false,
     "image": {
       "image/png": {
         "1x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@1x.png",
@@ -204,6 +666,7 @@
     },
     "rarity": "clothing",
     "price": "21",
+    "trade-ban": "June 5, 2024 13:26:05",
     "image": {
       "image/png": {
         "1x": "skins/rust/T-Shirt_Facepunch@1x.png",
@@ -219,6 +682,478 @@
     },
     "rarity": "resource",
     "price": "18.70",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Wood@1x.png",
+        "2x": "skins/rust/Wood@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "AK47u",
+    "pattern": {
+      "en": "Cartagena-AK47"
+    },
+    "rarity": "weapon",
+    "price": "154.06",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/AK47u_Cartagena-AK47@1x.png",
+        "2x": "skins/rust/AK47u_Cartagena-AK47@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Metal"
+    },
+    "rarity": "resource",
+    "price": "71.16",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Metal@1x.png",
+        "2x": "skins/rust/Metal@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Helmet",
+    "pattern": {
+      "en": "Digger Helmet"
+    },
+    "rarity": "armor",
+    "price": "492",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Rifle-Helmet_Digger-Helmet@1x.png",
+        "2x": "skins/rust/Rifle-Helmet_Digger-Helmet@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Pickaxe",
+    "pattern": {
+      "en": "Winter Pickaxe"
+    },
+    "rarity": "weapon",
+    "price": "183.79",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@1x.png",
+        "2x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "T-Shirt",
+    "pattern": {
+      "en": "Facepunch"
+    },
+    "rarity": "clothing",
+    "price": "21",
+    "trade-ban": "June 5, 2024 13:26:05",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/T-Shirt_Facepunch@1x.png",
+        "2x": "skins/rust/T-Shirt_Facepunch@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Wood"
+    },
+    "rarity": "resource",
+    "price": "18.70",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Wood@1x.png",
+        "2x": "skins/rust/Wood@2x.png"
+      }
+    }
+  },{
+    "game": "rust",
+    "slot": "AK47u",
+    "pattern": {
+      "en": "Cartagena-AK47"
+    },
+    "rarity": "weapon",
+    "price": "154.06",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/AK47u_Cartagena-AK47@1x.png",
+        "2x": "skins/rust/AK47u_Cartagena-AK47@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Metal"
+    },
+    "rarity": "resource",
+    "price": "71.16",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Metal@1x.png",
+        "2x": "skins/rust/Metal@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Helmet",
+    "pattern": {
+      "en": "Digger Helmet"
+    },
+    "rarity": "armor",
+    "price": "492",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Rifle-Helmet_Digger-Helmet@1x.png",
+        "2x": "skins/rust/Rifle-Helmet_Digger-Helmet@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Pickaxe",
+    "pattern": {
+      "en": "Winter Pickaxe"
+    },
+    "rarity": "weapon",
+    "price": "183.79",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@1x.png",
+        "2x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "T-Shirt",
+    "pattern": {
+      "en": "Facepunch"
+    },
+    "rarity": "clothing",
+    "price": "21",
+    "trade-ban": "June 5, 2024 13:26:05",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/T-Shirt_Facepunch@1x.png",
+        "2x": "skins/rust/T-Shirt_Facepunch@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Wood"
+    },
+    "rarity": "resource",
+    "price": "18.70",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Wood@1x.png",
+        "2x": "skins/rust/Wood@2x.png"
+      }
+    }
+  },{
+    "game": "rust",
+    "slot": "AK47u",
+    "pattern": {
+      "en": "Cartagena-AK47"
+    },
+    "rarity": "weapon",
+    "price": "154.06",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/AK47u_Cartagena-AK47@1x.png",
+        "2x": "skins/rust/AK47u_Cartagena-AK47@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Metal"
+    },
+    "rarity": "resource",
+    "price": "71.16",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Metal@1x.png",
+        "2x": "skins/rust/Metal@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Helmet",
+    "pattern": {
+      "en": "Digger Helmet"
+    },
+    "rarity": "armor",
+    "price": "492",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Rifle-Helmet_Digger-Helmet@1x.png",
+        "2x": "skins/rust/Rifle-Helmet_Digger-Helmet@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Pickaxe",
+    "pattern": {
+      "en": "Winter Pickaxe"
+    },
+    "rarity": "weapon",
+    "price": "183.79",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@1x.png",
+        "2x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "T-Shirt",
+    "pattern": {
+      "en": "Facepunch"
+    },
+    "rarity": "clothing",
+    "price": "21",
+    "trade-ban": "June 5, 2024 13:26:05",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/T-Shirt_Facepunch@1x.png",
+        "2x": "skins/rust/T-Shirt_Facepunch@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Wood"
+    },
+    "rarity": "resource",
+    "price": "18.70",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Wood@1x.png",
+        "2x": "skins/rust/Wood@2x.png"
+      }
+    }
+  },{
+    "game": "rust",
+    "slot": "AK47u",
+    "pattern": {
+      "en": "Cartagena-AK47"
+    },
+    "rarity": "weapon",
+    "price": "154.06",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/AK47u_Cartagena-AK47@1x.png",
+        "2x": "skins/rust/AK47u_Cartagena-AK47@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Metal"
+    },
+    "rarity": "resource",
+    "price": "71.16",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Metal@1x.png",
+        "2x": "skins/rust/Metal@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Helmet",
+    "pattern": {
+      "en": "Digger Helmet"
+    },
+    "rarity": "armor",
+    "price": "492",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Rifle-Helmet_Digger-Helmet@1x.png",
+        "2x": "skins/rust/Rifle-Helmet_Digger-Helmet@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Pickaxe",
+    "pattern": {
+      "en": "Winter Pickaxe"
+    },
+    "rarity": "weapon",
+    "price": "183.79",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@1x.png",
+        "2x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "T-Shirt",
+    "pattern": {
+      "en": "Facepunch"
+    },
+    "rarity": "clothing",
+    "price": "21",
+    "trade-ban": "June 5, 2024 13:26:05",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/T-Shirt_Facepunch@1x.png",
+        "2x": "skins/rust/T-Shirt_Facepunch@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Wood"
+    },
+    "rarity": "resource",
+    "price": "18.70",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Wood@1x.png",
+        "2x": "skins/rust/Wood@2x.png"
+      }
+    }
+  },{
+    "game": "rust",
+    "slot": "AK47u",
+    "pattern": {
+      "en": "Cartagena-AK47"
+    },
+    "rarity": "weapon",
+    "price": "154.06",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/AK47u_Cartagena-AK47@1x.png",
+        "2x": "skins/rust/AK47u_Cartagena-AK47@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Metal"
+    },
+    "rarity": "resource",
+    "price": "71.16",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Metal@1x.png",
+        "2x": "skins/rust/Metal@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Helmet",
+    "pattern": {
+      "en": "Digger Helmet"
+    },
+    "rarity": "armor",
+    "price": "492",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Rifle-Helmet_Digger-Helmet@1x.png",
+        "2x": "skins/rust/Rifle-Helmet_Digger-Helmet@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Pickaxe",
+    "pattern": {
+      "en": "Winter Pickaxe"
+    },
+    "rarity": "weapon",
+    "price": "183.79",
+    "trade-ban": false,
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@1x.png",
+        "2x": "skins/rust/Stone-Pickaxe_Winter-Pickaxe@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "T-Shirt",
+    "pattern": {
+      "en": "Facepunch"
+    },
+    "rarity": "clothing",
+    "price": "21",
+    "trade-ban": "June 5, 2024 13:26:05",
+    "image": {
+      "image/png": {
+        "1x": "skins/rust/T-Shirt_Facepunch@1x.png",
+        "2x": "skins/rust/T-Shirt_Facepunch@2x.png"
+      }
+    }
+  },
+  {
+    "game": "rust",
+    "slot": "Resource",
+    "pattern": {
+      "en": "Wood"
+    },
+    "rarity": "resource",
+    "price": "18.70",
+    "trade-ban": false,
     "image": {
       "image/png": {
         "1x": "skins/rust/Wood@1x.png",
