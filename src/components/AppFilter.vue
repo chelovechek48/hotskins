@@ -368,8 +368,8 @@ const resetSearch = () => {
 
     &-input:checked + &-label {
       z-index: 2;
-      box-shadow: 0 0 0 $border-width rgba(colors.$gold, 0.75);
-      background-color: rgba(colors.$gold, 0.75);
+      box-shadow: 0 0 0 $border-width colors.$gray;
+      background-color: colors.$gray;
     }
   }
 }
