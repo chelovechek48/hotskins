@@ -66,7 +66,7 @@ const changeSkins = (skin) => {
       <input
         type="checkbox" name="скин" :id="listStyle + index"
         class="card__input"
-        :disabled="getTimer(skin['trade-ban'])"
+        :disabled="skin['trade-ban']"
         :checked="selectedSkins.includes(skin)"
         @change="changeSkins(skin)"
       >
@@ -98,14 +98,16 @@ const changeSkins = (skin) => {
         </span>
 
         <div
-          v-if="getTimer(skin['trade-ban'])"
+          v-if="skin['trade-ban']"
           class="card__trade-status card__trade-status_locked"
         >
           <SvgTemplate
             class="card__icon-clock"
             icon-id="clock"
           />
-          <span>{{ getTimer(skin['trade-ban']) }}</span>
+          <span>
+            {{ getTimer(skin['trade-ban']) || 'Ожидание' }}
+          </span>
         </div>
         <span
           v-else
@@ -259,7 +261,7 @@ const changeSkins = (skin) => {
 
   &__icon {
     &-clock {
-      max-width: 1.125em;
+      flex: 0 0 1.125em;
     }
     &-trade {
       z-index: 1;

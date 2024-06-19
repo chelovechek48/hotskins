@@ -6,7 +6,9 @@ import SkinsField from '@components/SkinsField.vue';
 import AppCart from '@components/AppCart.vue';
 
 import gamesList from '@/assets/data/games.json';
-import skinsList from '@/assets/data/skins.json';
+import skinsJson from '@/assets/data/skins.json';
+
+const skinsList = ref(skinsJson);
 
 const route = useRoute();
 const router = useRouter();
@@ -42,7 +44,7 @@ const changeFilter = (changedValue) => {
   updateFilterProperties();
 };
 
-const skins = computed(() => skinsList.filter((skin) => {
+const skins = computed(() => skinsList.value.filter((skin) => {
   const filterGame = filterProperties.game.value;
   const filterRarity = filterProperties.rarity.value;
   const filterSearch = filterProperties.search.value;
@@ -71,6 +73,22 @@ const skins = computed(() => skinsList.filter((skin) => {
 }));
 const selectedSkins = ref([]);
 
+const resetSelectedSkins = () => {
+  selectedSkins.value.length = 0;
+};
+const changeSkinsList = () => {
+  const newSkinsList = skinsList.value.map((item) => {
+    const skin = item;
+    const isSelectedSkin = selectedSkins.value.includes(skin);
+    if (isSelectedSkin) {
+      skin['trade-ban'] = true;
+    }
+    return skin;
+  });
+  skinsList.value = newSkinsList;
+  resetSelectedSkins();
+};
+
 </script>
 
 <template>
@@ -89,7 +107,8 @@ const selectedSkins = ref([]);
     </div>
     <AppCart
       :selected-skins="selectedSkins"
-      @resetSelected="selectedSkins.length = 0"
+      @resetSelected="resetSelectedSkins()"
+      @tradeSkins="changeSkinsList()"
     >
       <SkinsField
         list-style="inline"

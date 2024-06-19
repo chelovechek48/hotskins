@@ -8,6 +8,7 @@
     },
     "rarity": "тайное",
     "price": "6418.04",
+    "trade-ban": false,
     "image": {
       "image/png": {
         "1x": "skins/cs2/AK-47_Inheritance@1x.png",
@@ -24,6 +25,7 @@
     },
     "rarity": "ширпотреб",
     "price": "5.53",
+    "trade-ban": "June 10, 2024 15:46:57",
     "image": {
       "image/png": {
         "1x": "skins/cs2/AUG_Contractor@1x.png",
@@ -40,6 +42,7 @@
     },
     "rarity": "армейское",
     "price": "391.64",
+    "trade-ban": false,
     "image": {
       "image/png": {
         "1x": "skins/cs2/FAMAS_Macabre@1x.png",
@@ -56,6 +59,7 @@
     },
     "rarity": "запрещенное",
     "price": "363.18",
+    "trade-ban": false,
     "image": {
       "image/png": {
         "1x": "skins/cs2/MP7_Powercore@1x.png",
@@ -72,6 +76,7 @@
     },
     "rarity": "засекреченное",
     "price": "1438.56",
+    "trade-ban": false,
     "image": {
       "image/png": {
         "1x": "skins/cs2/Nova_Antique@1x.png",
@@ -88,6 +93,7 @@
     },
     "rarity": "засекреченное",
     "price": "1438.56",
+    "trade-ban": false,
     "image": {
       "image/png": {
         "1x": "skins/cs2/Nova_Antique@1x.png",
@@ -104,6 +110,7 @@
     },
     "rarity": "запрещенное",
     "price": "1138.41",
+    "trade-ban": "June 1, 2024 02:46:38",
     "image": {
       "image/png": {
         "1x": "skins/cs2/P90_Blind-Spot@1x.png",
@@ -120,6 +127,7 @@
     },
     "rarity": "запрещенное",
     "price": "995.33",
+    "trade-ban": "June 2, 2024 20:49:55",
     "image": {
       "image/png": {
         "1x": "skins/cs2/P2000_Amber-Fade@1x.png",

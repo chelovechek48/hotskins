@@ -9,7 +9,7 @@ import SvgTemplate from '@components/SvgTemplate.vue';
 
 const { state } = useStore();
 
-const emit = defineEmits(['resetSelected']);
+const emit = defineEmits(['tradeSkins', 'resetSelected']);
 const props = defineProps({
   selectedSkins: {
     type: Array,
@@ -96,6 +96,7 @@ const toggleAccordion = () => {
         <button
           class="cart__button cart__button_price"
           :disabled="skinsCount === 0"
+          @click="emit('tradeSkins')"
         >
           <span class="cart__button-text">
             Пополнить счёт на
