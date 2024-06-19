@@ -175,7 +175,7 @@ const logout = () => {
   }
 
   &__dropdown {
-    $wrapper-padding: clamp(0.5rem, 2vw, 1rem);
+    $wrapper-padding: 1rem;
 
     &-wrapper {
       height: calc($logo-height + $header-padding * 2);
@@ -232,12 +232,11 @@ const logout = () => {
 
     &-nickname {
       color: colors.$gold;
-      font-size: 1rem;
-      font-size: clamp(0.9rem, 2vw, 1rem);
+      font-size: 1.125rem;
       font-weight: 500;
       line-height: 1.25;
 
-      max-width: 8rem;
+      max-width: 10rem;
       overflow: hidden;
       text-overflow: ellipsis;
       &::before {
@@ -277,14 +276,14 @@ const logout = () => {
         gap: 0.5em;
         padding-top: 0.5em;
 
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         text-transform: capitalize;
       }
     }
   }
 
   &__button {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 500;
 
     color: colors.$blue-gray-dark;
