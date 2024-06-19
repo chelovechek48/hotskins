@@ -13,7 +13,7 @@
           </span>
           и
           <span class="firstscreen__title-games">
-            DOTA 2
+            RUST
           </span>
         </h1>
         <router-link class="firstscreen__button" :to="{ name: 'login' }">
