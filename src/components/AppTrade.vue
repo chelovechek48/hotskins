@@ -30,16 +30,12 @@ const updateFilterProperties = () => {
 };
 
 const changeFilter = (changedValue) => {
-  const [key, value] = Object.entries(changedValue)[0];
-  filterProperties[key].value = value;
-
-  const hasGameChanged = key === 'game';
-  if (hasGameChanged) {
-    filterProperties.rarity.value = [];
-    filterProperties.search.value = '';
-
-    localStorage.setItem('selected-game', value);
-  }
+  const entries = Object.entries(changedValue);
+  entries.forEach((el) => {
+    const key = el[0];
+    const value = el[1];
+    filterProperties[key].value = value;
+  });
 
   updateFilterProperties();
 };
@@ -98,10 +94,24 @@ const changeSkinsList = () => {
       :properties="filterProperties"
       @changeFilter="changeFilter($event)"
     />
+    <p
+      v-show="skins.length === 0"
+      class="trade__empty page-container"
+    >
+      По вашему запросу не нашлось ни одного совпадения. Вы можете
+      <button
+        class="trade__empty-button" @click="changeFilter({
+          search: '',
+          rarity: [],
+        })"
+      >
+        сбросить фильтр.
+      </button>
+    </p>
     <div class="page-container">
       <SkinsField
         list-style="grid"
-        :skins="skins"
+        :skins="skins.length ? skins : skinsJson"
         :selected="selectedSkins"
       />
     </div>
@@ -120,11 +130,27 @@ const changeSkinsList = () => {
 </template>
 
 <style lang="scss" scoped>
+@use '@vars/colors';
+@use '@vars/keyframes';
 
 .trade {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  &__empty {
+    color: colors.$gray;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    text-align: center;
+
+    animation: shake 500ms linear;
+
+    &-button {
+      color: colors.$gold;
+      background-color: transparent;
+      font-size: inherit;
+    }
+  }
 }
 
 :root * {

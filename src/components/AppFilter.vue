@@ -54,7 +54,11 @@ const resetSearch = () => {
             type="radio" name="игра" :id="`filter-game-${game.id}`"
             class="filter__game-input"
             :checked="properties.game.value === game.id"
-            @change="emit('changeFilter', { game: game.id })"
+            @change="emit('changeFilter', {
+              game: game.id,
+              search: '',
+              rarity: []
+            })"
           >
           <label class="filter__game-label" :for="`filter-game-${game.id}`">
             <SvgTemplate

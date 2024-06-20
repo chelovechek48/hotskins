@@ -95,6 +95,7 @@ const validateInputData = (e) => {
 <style lang="scss" scoped>
 @use '@vars/breakpoints' as *;
 @use '@vars/colors';
+@use '@vars/keyframes';
 
 .login {
   display: flex;
@@ -205,23 +206,6 @@ const validateInputData = (e) => {
       visibility: visible;
       opacity: 1;
       animation: shake 500ms linear;
-      @keyframes shake {
-        0% {
-          translate: 0rem;
-        }
-        25% {
-          translate: 1rem;
-        }
-        50% {
-          translate: 0rem;
-        }
-        75% {
-          translate: 1rem;
-        }
-        100% {
-          translate: 0rem;
-        }
-      }
     }
   }
 }
