@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .favicon-text { fill: #20222A }
+      .favicon-background { fill: #FFFFFF }
+    }
+    @media (prefers-color-scheme: light) {
+      .favicon-text { fill: #FFFFFF }
+      .favicon-background { fill: #20222A }
+    }
+  </style>
+  <path class="favicon-background" fill="#20222A" d="M0 0h32v32H0z"/>
+  <path class="favicon-text" fill="#FFFFFF" d="M26 4v24h-5.5v-9.5h-9V28H6V4h5.5v9.1h9V4H26Z"/>
+</svg>
