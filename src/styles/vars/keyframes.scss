@@ -1,4 +1,4 @@
-@keyframes shake {
+@keyframes text-shake {
   0% {
     translate: 0rem;
   }
@@ -13,5 +13,17 @@
   }
   100% {
     translate: 0rem;
+  }
+}
+
+@keyframes icon-shake {
+  0% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 25% 0;
+  }
+  100% {
+    translate: 0 0;
   }
 }

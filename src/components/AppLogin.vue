@@ -205,7 +205,7 @@ const validateInputData = (e) => {
     &_active {
       visibility: visible;
       opacity: 1;
-      animation: shake 500ms linear;
+      animation: text-shake 500ms linear;
     }
   }
 }

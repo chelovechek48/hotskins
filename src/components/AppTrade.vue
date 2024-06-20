@@ -143,7 +143,7 @@ const changeSkinsList = () => {
     font-size: clamp(1.25rem, 2vw, 1.5rem);
     text-align: center;
 
-    animation: shake 500ms linear;
+    animation: text-shake 500ms linear;
 
     &-button {
       color: colors.$gold;

@@ -119,6 +119,7 @@ const toggleAccordion = () => {
 <style lang="scss" scoped>
 @use '@vars/breakpoints' as *;
 @use '@vars/colors';
+@use '@vars/keyframes';
 
 .cart {
   overflow: hidden;
@@ -206,12 +207,7 @@ const toggleAccordion = () => {
 
     &_price:not(:disabled):hover &-icon,
     &_price:not(:disabled):focus-visible &-icon {
-      @keyframes shake {
-        50% {
-          translate: 25% 0;
-        }
-      }
-      animation: shake 350ms ease;
+      animation: icon-shake 350ms ease;
     }
   }
 }
