@@ -1,5 +1,7 @@
 <script setup>
-import { ref, computed } from 'vue';
+import {
+  ref, computed, onMounted, onUnmounted,
+} from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import AppFilter from '@components/AppFilter.vue';
 import SkinsField from '@components/SkinsField.vue';
@@ -8,7 +10,13 @@ import AppCart from '@components/AppCart.vue';
 import gamesList from '@/assets/data/games.json';
 import skinsJson from '@/assets/data/skins.json';
 
-const skinsList = ref(skinsJson);
+const root = document.querySelector(':root');
+onMounted(() => {
+  root.style.setProperty('--scrollbar-gutter', 'stable');
+});
+onUnmounted(() => {
+  root.style.setProperty('--scrollbar-gutter', 'auto');
+});
 
 const route = useRoute();
 const router = useRouter();
@@ -40,6 +48,7 @@ const changeFilter = (changedValue) => {
   updateFilterProperties();
 };
 
+const skinsList = ref(skinsJson);
 const skins = computed(() => skinsList.value.filter((skin) => {
   const filterGame = filterProperties.game.value;
   const filterRarity = filterProperties.rarity.value;

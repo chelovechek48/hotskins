@@ -17,7 +17,12 @@ import AppFooter from '@components/AppFooter.vue';
 @use '@vars/breakpoints' as *;
 @use '@vars/mixins';
 
+:root {
+  --scrollbar-gutter: auto; // or stable
+}
+
 html {
+  scrollbar-gutter: var(--scrollbar-gutter);
   @include mixins.scrollbar(
     $thumb: colors.$gray,
     $track: colors.$indigo
