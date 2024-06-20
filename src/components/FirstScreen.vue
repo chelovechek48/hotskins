@@ -30,9 +30,9 @@
 
 .firstscreen {
   background-image: image-set(
-    url("@images/firstscreen-background@1x.avif") type("image/avif") 1x,
-    url("@images/firstscreen-background@2x.avif") type("image/avif") 2x,
-    url("@images/firstscreen-background.jpg") type("image/jpeg") 1x,
+    url("@images/firstscreen/firstscreen-background@1x.avif") type("image/avif") 1x,
+    url("@images/firstscreen/firstscreen-background@2x.avif") type("image/avif") 2x,
+    url("@images/firstscreen/firstscreen-background.jpg") type("image/jpeg") 1x,
   );
   background-repeat: no-repeat;
   background-position: right bottom;

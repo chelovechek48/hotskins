@@ -11,7 +11,7 @@ const store = createStore({
         nickname: 'MegaNagibator',
         avatar: {
           'image/png': {
-            '1x': 'user-avatar.png',
+            '1x': 'userdata/user-avatar.png',
           },
           alt: 'аватарка steam',
         },

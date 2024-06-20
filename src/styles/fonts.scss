@@ -1,5 +1,30 @@
 // @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap');
 
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: url('@fonts/Rubik/Rubik-Regular.woff2') format('woff2'),
+       url('@fonts/Rubik/Rubik-Regular.woff') format('woff'),
+       url('@fonts/Rubik/Rubik-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  src: url('@fonts/Rubik/Rubik-Medium.woff2') format('woff2'),
+       url('@fonts/Rubik/Rubik-Medium.woff') format('woff'),
+       url('@fonts/Rubik/Rubik-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  src: url('@fonts/Rubik/Rubik-SemiBold.woff2') format('woff2'),
+       url('@fonts/Rubik/Rubik-SemiBold.woff') format('woff'),
+       url('@fonts/Rubik/Rubik-SemiBold.ttf') format('truetype');
+}
+
 * {
   font-family: "Rubik", sans-serif;
 }
