@@ -10,8 +10,8 @@ const store = createStore({
         password: 'admin',
         nickname: 'MegaNagibator',
         avatar: {
-          'image/jpeg': {
-            '1x': 'user-avatar.jpg',
+          'image/png': {
+            '1x': 'user-avatar.png',
           },
           alt: 'аватарка steam',
         },
