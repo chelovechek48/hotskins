@@ -4,25 +4,25 @@
   font-family: 'Rubik';
   font-style: normal;
   font-weight: 400;
-  src: url('@fonts/Rubik/Rubik-Regular.woff2') format('woff2'),
-       url('@fonts/Rubik/Rubik-Regular.woff') format('woff'),
-       url('@fonts/Rubik/Rubik-Regular.ttf') format('truetype');
+  src: url('@fonts/Rubik/Rubik-Regular@subset.woff2') format('woff2'),
+       url('@fonts/Rubik/Rubik-Regular@subset.woff') format('woff'),
+       url('@fonts/Rubik/Rubik-Regular@subset.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Rubik';
   font-style: normal;
   font-weight: 500;
-  src: url('@fonts/Rubik/Rubik-Medium.woff2') format('woff2'),
-       url('@fonts/Rubik/Rubik-Medium.woff') format('woff'),
-       url('@fonts/Rubik/Rubik-Medium.ttf') format('truetype');
+  src: url('@fonts/Rubik/Rubik-Medium@subset.woff2') format('woff2'),
+       url('@fonts/Rubik/Rubik-Medium@subset.woff') format('woff'),
+       url('@fonts/Rubik/Rubik-Medium@subset.ttf') format('truetype');
 }
 @font-face {
   font-family: 'Rubik';
   font-style: normal;
   font-weight: 600;
-  src: url('@fonts/Rubik/Rubik-SemiBold.woff2') format('woff2'),
-       url('@fonts/Rubik/Rubik-SemiBold.woff') format('woff'),
-       url('@fonts/Rubik/Rubik-SemiBold.ttf') format('truetype');
+  src: url('@fonts/Rubik/Rubik-SemiBold@subset.woff2') format('woff2'),
+       url('@fonts/Rubik/Rubik-SemiBold@subset.woff') format('woff'),
+       url('@fonts/Rubik/Rubik-SemiBold@subset.ttf') format('truetype');
 }
 
 * {
